@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Bloom &amp; Brew | Haute Botanique &amp; Café (React Live Preview)</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet"
+  />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-primary-container": "#e48599",
+            "tertiary": "#e2c383",
+            "outline": "#a18c8e",
+            "tertiary-fixed-dim": "#e2c383",
+            "inverse-on-surface": "#3c2d29",
+            "surface-container": "#2a1c19",
+            "surface-tint": "#ffb1c0",
+            "on-surface-variant": "#d9c1c4",
+            "on-secondary": "#11372c",
+            "secondary-fixed": "#c3ebdb",
+            "inverse-primary": "#954458",
+            "surface-dim": "#1d100d",
+            "error": "#ffb4ab",
+            "primary-fixed": "#ffd9df",
+            "on-surface": "#f7ddd7",
+            "secondary": "#a8cfc0",
+            "surface": "#1d100d",
+            "secondary-fixed-dim": "#a8cfc0",
+            "on-primary": "#5b172b",
+            "tertiary-fixed": "#ffdf9f",
+            "on-tertiary-container": "#ba9d61",
+            "surface-container-low": "#261815",
+            "on-primary-fixed-variant": "#782d41",
+            "background": "#1d100d",
+            "on-error": "#690005",
+            "on-error-container": "#ffdad6",
+            "on-tertiary-fixed-variant": "#594310",
+            "surface-bright": "#463532",
+            "surface-container-highest": "#41312e",
+            "on-tertiary-fixed": "#261a00",
+            "tertiary-container": "#483402",
+            "surface-variant": "#41312e",
+            "surface-container-high": "#362623",
+            "on-secondary-fixed-variant": "#294d42",
+            "secondary-container": "#2c5044",
+            "on-tertiary": "#402d00",
+            "error-container": "#93000a",
+            "on-secondary-fixed": "#002118",
+            "on-background": "#f7ddd7",
+            "surface-container-lowest": "#170b09",
+            "primary-container": "#641e32",
+            "primary": "#ffb1c0",
+            "on-primary-fixed": "#3f0117",
+            "outline-variant": "#534245",
+            "inverse-surface": "#f7ddd7",
+            "on-secondary-container": "#9ac1b2",
+            "primary-fixed-dim": "#ffb1c0"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-xl": "3rem",
+            "space-sm": "0.5rem",
+            "gutter-desktop": "2.5rem",
+            "margin": "1.25rem",
+            "margin-desktop": "4rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "space-2xl": "5rem",
+            "space-lg": "1.75rem",
+            "gutter": "1.5rem"
+          },
+          fontFamily: {
+            "headline-lg": ["Playfair Display", "serif"],
+            "display-hero": ["Playfair Display", "serif"],
+            "label-md": ["Plus Jakarta Sans", "sans-serif"],
+            "display-hero-mobile": ["Playfair Display", "serif"],
+            "body-sm": ["Plus Jakarta Sans", "sans-serif"],
+            "body-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-sm": ["Playfair Display", "serif"],
+            "headline-lg-mobile": ["Playfair Display", "serif"],
+            "label-caps": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-md": ["Playfair Display", "serif"],
+            "body-md": ["Plus Jakarta Sans", "sans-serif"],
+            "title-editorial": ["Playfair Display", "serif"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #1d100d;
+        color: #f7ddd7;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+
+  <!-- React 18 & Babel Standalone -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body class="bg-surface text-on-surface antialiased selection:bg-primary-container selection:text-primary">
+  <div id="root"></div>
+
+  <!-- React Application Source in Babel -->
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    // --- DATA ---
+    const productsData = [
+      {
+        id: 'prod-1',
+        category: 'cafe',
+        badge: 'Single Origin',
+        subTitle: 'Signature Brew',
+        title: 'Gold Crema Single-Origin Ethiopian Pour-Over',
+        description: 'Slow-dripped Yirgacheffe harvest with notes of jasmine blossom, candied bergamot, and a silky golden crema finish.',
+        price: 380,
+        priceFormatted: '₹380',
+        unit: 'Single Cup 250ml',
+        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBp7cx0kHO5WTggWOCZp0MvB3CaPx33QDlciJJq4ecpDYbUPAoDsYPAcPKjDolZK5SrhivcRmbwQQvpzbv7Xn0gdhV71pbioAr0dvTt9JRfKN8CO7YaalBsXo98EzYByDmOTCI2kDpoYubve08QuhqHC7oOyCTljWPg7DmPtiXSWnib4mdYDyU5wi5pRtv7Itl27vK8msA7WJ2rKOdkWa1RRoxaauRdzCodRzgXJg'
+      },
+      {
+        id: 'prod-2',
+        category: 'cafe',
+        badge: 'Patron Favorite',
+        subTitle: 'Botanical Specialty',
+        title: 'Velvet Rose Infused Cappuccino with Gold Leaf',
+        description: 'Double shot espresso steeped with Ispahan rose essence, steamed whole milk, topped with 24K edible gold flake.',
+        price: 420,
+        priceFormatted: '₹420',
+        unit: 'Warm Porcelain',
+        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAiJEFsKbrVgMTqJz7EvJUSeZpTWENbR6J4F-pvvYtvH5Ln8RY7L9EzhWjR7ItI3eZwHW_tiZ8usMG3qiWRXguq7L53tIpWg4x89jPGuG6aLEew5ihwQvSw1Dn4yEerrf3cAJgAOahrqTlhKGWdTAJg3Z_6r7kNlN2ry__GgCcs19_6no_ub_C9g1J3n3zmgERXh7s5ik_BHFd1wKF1TG8hlInlEK3DSNu1n8rhyw'
+      },
+      {
+        id: 'prod-3',
+        category: 'cafe',
+        badge: 'Cold Brewed',
+        subTitle: 'Signature Iced',
+        title: 'Madagascar Vanilla & Condensed Milk Espresso',
+        description: 'Chilled double ristretto layered over velvety sweetened condensed milk infused with cured bourbon vanilla pods.',
+        price: 460,
+        priceFormatted: '₹460',
+        unit: 'Tall Ribbed Crystal',
+        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAC0pfWFJclR-V66j1z22KwY9r89FCfxzaoaQRXP0hCBKMLjRHteXkSCrL-HYQTvtDmWaA-N0sLnkRc92e2MtyIR3-zLN-GXolzU4x3tM_Q6AWkjYUWgNQqO1JCJc7dRVQuvFs5i0AaobgToraePG86g5k6o7Ga2ny7IdS5S9M-cSBAle0WhHcmbB126GQuOt8Nq4Q81AVz9JM_UhyrQbpnmqByHOhHzb0vxuZ6Mw'
+      },
+      {
+        id: 'prod-4',
+        category: 'cafe',
+        badge: 'Baked Fresh 07:00',
+        subTitle: 'Viennoiserie',
+        title: 'Valrhona 70% Dark Chocolate Feuilleté Croissant',
+        description: 'Laminated French cultured butter dough folded twenty-seven times around dual batons of Valrhona Guanaja chocolate.',
+        price: 340,
+        priceFormatted: '₹340',
+        unit: 'Patisserie Oven Fresh',
+        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDrU1T0gH_7m7GWKTSObQc8Yyef3sbn9wB9x1o7nzuUy-1XN-jA4YAIlNQZfz4A6JprjmfnKFQ88Wc_ehyyayWt-myYhv1nQRQLQMy4gFhlEkwFJaEP1ZH8HPFz_vOEwdKFmT4cpq4nvza5bMClK9eHcRhDmwSOtlURUt0erklxhv117cMY6CILVTX0IZih2_OSDMkL0XsSs80GsjOQjTzqgpCY4zMU5grzSuXXwQ'
+      },
+      {
+        id: 'prod-5',
+        category: 'floral',
+        badge: 'Couture Floristry',
+        subTitle: 'Haute Bouquet',
+        title: 'The Grand Romance — 50 Deep Crimson Garden Roses',
+        description: 'Half-century of hand-selected Ecuadorian long-stem roses enveloped in midnight tissue and tied with bespoke gold foil monogram.',
+        price: 4800,
+        priceFormatted: '₹4,800',
+        unit: 'Luxury Presentation Box',
+        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuArtVquYuJWipOMDtyLIWNfyQtS3fZMCzCALsJnyXSrhAldnJPpoMPpY1Scyl2d5iFyP7X6kBl8DgARKn1sPHvMLNvYxhmZu61b6mI4QoDB4dlKBYQC5bdlS-dfAwNWD8CePOUNKic2yvgOQr5Iso42a28JbVZlQV1dSBEvYRIIHT0WOoTV5Rtdm9XNdcidfzLVbQnZ2vYjcc73mJ9W-GCaGKEX0dGDluhq8FkukQ'
+      },
+      {
+        id: 'prod-6',
+        category: 'floral',
+        badge: 'Dutch Import',
+        subTitle: 'Seasonal Bloom',
+        title: 'Spring in Provence — Hand-Tied French Pink Tulips',
+        description: 'Crisp, dew-dusted French pink fringed tulips complemented by fragrant Italian ruscus and raw Japanese craft paper wrap.',
+        price: 3600,
+        priceFormatted: '₹3,600',
+        unit: 'Hand-Tied 24 Stems',
+        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAgXD5CMm6hLhq164-WvdmxR0jlzLNBWWSjB9foRCjo_e6r80TvkBOc3kXKUelIvdLSobYrpdQGJFnrIEXVnqmHhrR7_r8BytlxKtUzNFkny_foFwjx63crZ6-i3_5SwEYXPLcfeQqSsTllAzdiNDCRJ82B8wTiqjZTQYm2XwE-3a4GmI2qVvm8DY-SJEu61pQHZ_UgljSVGcqxlgunWthU58d93xACun6qeXCgqw'
+      },
+      {
+        id: 'prod-7',
+        category: 'floral',
+        badge: 'Centerpiece Urn',
+        subTitle: 'Signature Centerpiece',
+        title: 'The Versailles Urn — Hydrangeas, Peonies & Orchids',
+        description: 'Architectural floral composition in an aged brass urn featuring antique blue hydrangeas, white moth orchids, and cascading ivy.',
+        price: 5900,
+        priceFormatted: '₹5,900',
+        unit: 'Aged Brass Vessel Included',
+        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAWTyCsFQDLDAFqnpn9uGyiDU7_XqXJjhdvUq_HOHWmBtJ95NXNroNFSEHU297g_sWn1h2fORwkAbQ4PUBxxG_EQkPnnNKbJt46Y2kT2B7v5KKmPeHweZvcb6ZeRHjkxmrXhM3RPxmq81kXDfDR-MW1bc7ToS7ixr_LK_eqIQmUxW9mNit-OlKAtBcKcfIXD_fJIt0_ZvQrLhWEEjV9nsAohyzNSdeRh-1EpVAM3w'
+      },
+      {
+        id: 'prod-8',
+        category: 'hampers',
+        badge: 'Luxury Trunk',
+        subTitle: 'Curated Gift Hamper',
+        title: 'The Bespoke Botanical Hamper with Coffee Beans',
+        description: 'Handmade leatherette trunk with 250g heirloom roast, preserved rose dome, Madagascar bean syrup, and custom calligraphed letter.',
+        price: 6500,
+        priceFormatted: '₹6,500',
+        unit: 'Monogram Trunk Set',
+        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDqn5oBqCWjV4TvUpP5iyi1haGuj0uJKcIY4Irs2WLAQIAzpHWH5MFuq4cG8jjL8YvQshYkDraGy3qBd0sLlNoAM8Ps8X94ajDqFr93VW10oanpGWWSfxSvlwBImwS3lFgp4LRH7PPhvN9XdPfAA_GwDX7g1QxbIY099gFKnJddUeRJpfAv0xEahqJ40pyD5b8oI9E4ZFmf6V10rOEKZEK-XeLVY_czCuFWSYvl6w'
+      }
+    ];
+
+    const zonesData = {
+      orangerie: {
+        key: 'orangerie',
+        zoneLabel: 'Zone A',
+        title: 'The Grand Glasshouse Orangerie',
+        shortTitle: 'Glasshouse Orangerie',
+        badge: 'High Skylight Dome',
+        acoustic: 'Gentle Fountain & Songbirds',
+        subText: 'Under cathedral dome foliage',
+        desc: 'Tables 1 through 6 rest under soaring steel-and-glass vaulting. Scented with hanging star jasmine and living orchid vines. Ideal for lingering high tea and gentle conversations.',
+        imgUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAuJ-a84I13nk7JHdMKoAeVGzckiyPGjxjeDmhjwRfbN3L_0_UOceTXqmvRFuoCejrBua_2OT5pAX__GiiS9-_6L0mA3ELOMH6U2s8lj2fa5JSejvn_wfA4pGDbUaECXxcVID-WjUBe0N_Xrtve8T7qiZxONS6aBTaUmOk1R8-mLX9jY5c_uvbxDskwmQIOKtTkDd-pocmZOHSNYAE-WCqy1Wvtl2FJER6qF39QLQ',
+        tables: [
+          { id: 'T-01', label: 'Table 01', type: '2-Top Bistro', status: 'available' },
+          { id: 'T-02', label: 'Table 02', type: '2-Top Bistro', status: 'reserved' },
+          { id: 'T-03', label: 'Table 03', type: '4-Top Center', status: 'available' },
+          { id: 'T-04', label: 'Table 04', type: '4-Top Center', status: 'available' },
+          { id: 'T-05', label: 'Table 05', type: '6-Top Salon', status: 'available' },
+          { id: 'T-06', label: 'Table 06', type: '4-Top Foliage', status: 'reserved' }
+        ]
+      },
+      alcoves: {
+        key: 'alcoves',
+        zoneLabel: 'Zone B',
+        title: 'The Velvet Rose Alcoves',
+        shortTitle: 'Velvet Rose Alcoves',
+        badge: 'Romantic & Secluded',
+        acoustic: 'Intimate Candlelit Ambiance',
+        subText: 'Candlelit burgundy booths',
+        desc: 'Private booth seating enveloped in deep crimson velvet curtains, brass sconces, and soft flickering candlelight. Perfectly tailored for romantic celebrations and anniversaries.',
+        imgUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAl7sLJKAhqMkDtV0QJe7_OcC0H_goROZJ-cHOWzYVhQUh5msPVSJ4MgalF6ow05a5hdzz_3FoeV4ejlQT3VoBpFn37xaZfOu6W5K0ahAOPMts4oO0WGL_vFRTheJhQMrf6YHmQRRdP02Rx_NFgA5ArWaOj1kmRWkTQZqCs7IIUj6L5WKvzIqqeIqD6kKzzr0uvSDXdQt4dQnGQHlvRsMJbdhL_-NRWieUgrc8vxA',
+        tables: [
+          { id: 'B-01', label: 'Alcove 01', type: '2-Top Romantic', status: 'available' },
+          { id: 'B-02', label: 'Alcove 02', type: '2-Top Romantic', status: 'available' },
+          { id: 'B-03', label: 'Alcove 03', type: '4-Top Salon', status: 'reserved' },
+          { id: 'B-04', label: 'Alcove 04', type: '2-Top Romantic', status: 'available' }
+        ]
+      },
+      atelier: {
+        key: 'atelier',
+        zoneLabel: 'Zone C',
+        title: 'The Florist Atelier Counter',
+        shortTitle: 'Florist Atelier Counter',
+        badge: 'Interactive & Artisan',
+        acoustic: 'Espresso Extraction & Lively Chatter',
+        subText: 'Bar seating facing florists',
+        desc: 'Front-row marble counter seating overlooking master botanical florists hand-tying bespoke bridal and daily bouquets while savoring precision pour-overs.',
+        imgUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCy_5qn8R13CGG4h13QVaUWDBJ7WaZhXq53c-p6scgcXYAHeJw9gfXubiBvSPNSpOoHzuigaRdm6c5VvaXOQ-N1U_6PyaqRzcKNh9v8Fjvcps_stDuIIM3UjgPNRiyPL40qPjQPYCwaaV3IJqVpXb6p3JS0LNz2f93jlrr2jMSOxj_oFjozb481DufuLntQt6lHjRbjgqbEitm1I042Xgb-77w-rKUrf4Y66ZUhAg',
+        tables: [
+          { id: 'C-01', label: 'Counter 01', type: '1-2 Patrons', status: 'available' },
+          { id: 'C-02', label: 'Counter 02', type: '1-2 Patrons', status: 'available' },
+          { id: 'C-03', label: 'Counter 03', type: '1-2 Patrons', status: 'reserved' },
+          { id: 'C-04', label: 'Counter 04', type: '1-2 Patrons', status: 'available' }
+        ]
+      },
+      veranda: {
+        key: 'veranda',
+        zoneLabel: 'Zone D',
+        title: 'The Fragrant Veranda',
+        shortTitle: 'The Fragrant Veranda',
+        badge: 'Open Air Garden',
+        acoustic: 'Rustling Leaves & Garden Breeze',
+        subText: 'Terrace & heated braziers',
+        desc: 'Covered outdoor garden terrace overlooking manicured boxwood parterres with warm brass braziers, soft cashmere throws, and jasmine trellises.',
+        imgUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCrDXRfN8N4eMLBMz5nr3ul2ADeM_zwMFQB4scimnbRdhiqYyTIFMpAFjMx6zfmEp5YyC5Xjlxv5VgD2av8ACydBkaMLEOXSAf6Q3gnCqZPtel5yJlojgVR3CUWNZn5iIPo2BKEVTbSxbz3mP9MvRIldq-VVZkHd1tjev-WALbQqQ8vFvRe_1xh0VevVKbwb7jQ-0e36SJtz6ZwvCzzYQdR0Kib0AVRYUWoGe-FIg',
+        tables: [
+          { id: 'V-01', label: 'Veranda 01', type: '2-Top Garden', status: 'available' },
+          { id: 'V-02', label: 'Veranda 02', type: '4-Top Brazier', status: 'available' },
+          { id: 'V-03', label: 'Veranda 03', type: '4-Top Brazier', status: 'available' },
+          { id: 'V-04', label: 'Veranda 04', type: '6-Top Pavilion', status: 'reserved' }
+        ]
+      }
+    };
+
+    const experiencesData = [
+      {
+        id: 'exp-1',
+        name: 'Afternoon Tea & Floral Tasting',
+        badge: 'Signature',
+        price: 2400,
+        priceUnit: '/ guest',
+        isCoupleRate: false,
+        duration: '90 Minutes Salon Duration',
+        description: '3-tier pâtisserie tower, artisanal finger sandwiches, botanical infused tea or pour-over pairing, and a hand-tied garden posy.'
+      },
+      {
+        id: 'exp-2',
+        name: 'Artisanal Coffee & Master Pastry Flight',
+        badge: 'Connoisseur',
+        price: 1800,
+        priceUnit: '/ guest',
+        isCoupleRate: false,
+        duration: '75 Minutes Salon Duration',
+        description: 'Choice of two single-origin pour-overs, siphon extraction demo at table, paired with three mini viennoiseries.'
+      },
+      {
+        id: 'exp-3',
+        name: 'Candlelight & Botanical Elixirs',
+        badge: 'Twilight Soirée',
+        price: 3500,
+        priceUnit: '/ guest',
+        isCoupleRate: false,
+        duration: '120 Minutes Salon Duration',
+        description: 'Infused artisanal mocktails/elixirs, artisanal savory bites, warm brioche tartines, and 5-course dessert degustation.'
+      },
+      {
+        id: 'exp-4',
+        name: 'Bespoke Floral Celebration (Anniversary/Birthday)',
+        badge: 'VIP Romance',
+        price: 5000,
+        priceUnit: '/ couple',
+        isCoupleRate: true,
+        duration: '150 Minutes Salon Duration',
+        description: 'Custom monogrammed French silk ribbon, grand 50-rose table centerpiece, premium pastry tower, and private sommelier pairing.'
+      }
+    ];
+
+    const addonsData = [
+      { id: 'rose-bouquet', title: 'Damask Rose Bouquet', price: 2800, formatted: '+₹2,800', desc: 'Freshly hand-tied bouquet placed on your table upon arrival with personal card.' },
+      { id: 'love-note', title: 'Calligraphed Letter', price: 650, formatted: '+₹650', desc: 'Handwritten parchment card sealed with gold floral wax stamping.' },
+      { id: 'geisha-flight', title: 'Rare Geisha Coffee Flight', price: 1500, formatted: '+₹1,500', desc: 'Exclusive Panama Hacienda La Esmeralda tasting led by Head Barista.' },
+      { id: 'gold-cake', title: 'Valrhona Chocolate Cake', price: 1800, formatted: '+₹1,800', desc: '24k edible gold leaf celebration gateau served with sparkling elderflower.' }
+    ];
+
+    // --- MAIN REACT APP ---
+    function App() {
+      const [currentPage, setCurrentPage] = useState('home');
+      const [isCartOpen, setIsCartOpen] = useState(false);
+      const [isReservationModalOpen, setIsReservationModalOpen] = useState(false);
+      const [toast, setToast] = useState({ visible: false, title: '', subtext: '' });
+
+      const [cartItems, setCartItems] = useState([
+        {
+          id: 'cart-1',
+          title: 'The Montmartre Peony Blend',
+          subTitle: 'Hand-tied Bouquet',
+          category: 'floral',
+          price: 1850,
+          quantity: 1,
+          image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAgXD5CMm6hLhq164-WvdmxR0jlzLNBWWSjB9foRCjo_e6r80TvkBOc3kXKUelIvdLSobYrpdQGJFnrIEXVnqmHhrR7_r8BytlxKtUzNFkny_foFwjx63crZ6-i3_5SwEYXPLcfeQqSsTllAzdiNDCRJ82B8wTiqjZTQYm2XwE-3a4GmI2qVvm8DY-SJEu61pQHZ_UgljSVGcqxlgunWthU58d93xACun6qeXCgqw'
+        },
+        {
+          id: 'cart-2',
+          title: 'Ethiopian Yirgacheffe Roast',
+          subTitle: '250g Whole Bean',
+          category: 'cafe',
+          price: 850,
+          quantity: 1,
+          image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBp7cx0kHO5WTggWOCZp0MvB3CaPx33QDlciJJq4ecpDYbUPAoDsYPAcPKjDolZK5SrhivcRmbwQQvpzbv7Xn0gdhV71pbioAr0dvTt9JRfKN8CO7YaalBsXo98EzYByDmOTCI2kDpoYubve08QuhqHC7oOyCTljWPg7DmPtiXSWnib4mdYDyU5wi5pRtv7Itl27vK8msA7WJ2rKOdkWa1RRoxaauRdzCodRzgXJg'
+        }
+      ]);
+
+      const [reservationState, setReservationState] = useState({
+        refCode: 'BNB-2024-PARIS-0842',
+        zone: 'orangerie',
+        zoneTitle: 'The Grand Glasshouse Orangerie',
+        table: 'Table 03',
+        tableType: '4-Top Center',
+        experience: experiencesData[0],
+        guests: 2,
+        date: 'Today, Oct 24',
+        timeSlot: '02:30 PM',
+        addons: { 'rose-bouquet': 2800 },
+        patronName: 'Lady Evelyn Vance',
+        patronPhone: '+91 98201 44589',
+        patronEmail: 'evelyn.vance@couture.com',
+        grandTotal: 5040
+      });
+
+      const showToast = (title, subtext) => {
+        setToast({ visible: true, title, subtext });
+        setTimeout(() => setToast(prev => ({ ...prev, visible: false })), 3000);
+      };
+
+      const handleAddToCart = (product) => {
+        setCartItems(prev => {
+          const match = prev.find(i => i.id === product.id);
+          if (match) {
+            return prev.map(i => i.id === product.id ? { ...i, quantity: i.quantity + 1 } : i);
+          }
+          return [...prev, {
+            id: product.id,
+            title: product.title,
+            subTitle: product.subTitle,
+            category: product.category,
+            price: product.price,
+            quantity: 1,
+            image: product.image
+          }];
+        });
+        showToast(product.title + " added", product.priceFormatted + " — Ready in your Salon Cart");
+      };
+
+      return (
+        <div className="min-h-screen bg-surface text-on-surface antialiased flex flex-col font-body-md">
+          {/* HEADER */}
+          <header className="fixed top-0 left-0 right-0 z-40 bg-primary-container/95 backdrop-blur-md border-b border-tertiary/20">
+            <div className="bg-surface-container-lowest text-tertiary border-b border-tertiary/20 py-1.5 px-4 md:px-16 text-center">
+              <div className="max-w-7xl mx-auto flex items-center justify-center gap-2 text-xs">
+                <span className="material-symbols-outlined text-[14px]">spa</span>
+                <p className="font-label-caps text-[11px] uppercase tracking-widest truncate">
+                  Complimentary Parisian Floral Gift Box on all orders above ₹2,499 | Reserve Your Garden Table for High Tea
+                </p>
+                <span className="material-symbols-outlined text-[14px] hidden sm:inline">spa</span>
+              </div>
+            </div>
+
+            <div className="h-20 max-w-7xl mx-auto px-4 md:px-16 flex items-center justify-between gap-4">
+              <div className="flex items-center gap-3 cursor-pointer" onClick={() => setCurrentPage('home')}>
+                <img
+                  alt="Bloom &amp; Brew Emblem"
+                  className="h-8 w-auto object-contain"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB5HM8hMPi0PqBmd5UyFvGheoL-4dfPyGD1VHAL_vWd0EDCY3wh81UHbWS8vOzF0akqfr3V2o8P1NKDvzt5Y9uPLvEMAyOEDPwnKmoWuc7102qc6PwjJc6lppBnvxevbH7kiRQn_G4F10Y7LoFKxV2fAmlnEWKc0_-wtBzOQDP3vO1W8AA8LqvHWkPqUtVh3Gb0voqUFL7D1NbPERIiRrpZ_nIvaKDDPPmlhJqIg"
+                />
+                <div className="flex flex-col text-left">
+                  <span className="font-headline-sm text-lg sm:text-xl tracking-tight text-on-surface font-headline-sm font-serif">
+                    BLOOM &amp; BREW
+                  </span>
+                  <span className="font-label-caps text-[10px] sm:text-xs tracking-widest text-tertiary uppercase">
+                    BOTANICAL CAFÉ &amp; ATELIER
+                  </span>
+                </div>
+              </div>
+
+              {/* View Nav Pills */}
+              <div className="flex items-center bg-surface-container rounded-full p-1 border border-tertiary/20 text-xs font-label-caps">
+                <button
+                  type="button"
+                  onClick={() => setCurrentPage('home')}
+                  className={`px-3 py-1 rounded-full transition-all ${currentPage === 'home' ? 'bg-tertiary text-surface-container-lowest font-bold shadow-sm' : 'text-on-surface-variant hover:text-on-surface'}`}
+                >
+                  Flagship Experience
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setCurrentPage('reserve')}
+                  className={`px-3 py-1 rounded-full transition-all ${currentPage === 'reserve' ? 'bg-tertiary text-surface-container-lowest font-bold shadow-sm' : 'text-on-surface-variant hover:text-on-surface'}`}
+                >
+                  Reserve Table
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setCurrentPage('confirmation')}
+                  className={`px-3 py-1 rounded-full transition-all ${currentPage === 'confirmation' ? 'bg-tertiary text-surface-container-lowest font-bold shadow-sm' : 'text-on-surface-variant hover:text-on-surface'}`}
+                >
+                  VIP Concierge Pass
+                </button>
+              </div>
+
+              {/* Right tools */}
+              <div className="flex items-center gap-3">
+                <button
+                  aria-label="Shopping Cart"
+                  className="relative p-2 text-on-surface-variant hover:text-tertiary transition-colors flex items-center justify-center"
+                  onClick={() => setIsCartOpen(true)}
+                  type="button"
+                >
+                  <span className="material-symbols-outlined text-[22px]">shopping_bag</span>
+                  {cartItems.length > 0 && (
+                    <span className="absolute top-1 right-1 h-4 min-w-[16px] px-1 rounded-full bg-tertiary text-surface-container-lowest font-label-caps text-[10px] font-bold flex items-center justify-center leading-none">
+                      {cartItems.reduce((acc, i) => acc + i.quantity, 0)}
+                    </span>
+                  )}
+                </button>
+                <button
+                  className="hidden sm:inline-flex items-center justify-center px-4 py-2 border border-tertiary/60 bg-primary-container text-tertiary font-label-caps text-xs uppercase tracking-widest hover:bg-secondary-container hover:text-secondary-fixed transition-all"
+                  onClick={() => setCurrentPage('reserve')}
+                  type="button"
+                >
+                  Book a Table
+                </button>
+                <div
+                  title="Lady Evelyn Vance (VIP Patron)"
+                  onClick={() => setCurrentPage('confirmation')}
+                  className="w-8 h-8 rounded-full bg-primary flex items-center justify-center border border-tertiary/40 cursor-pointer"
+                >
+                  <span className="material-symbols-outlined text-on-primary text-[18px]">person</span>
+                </div>
+              </div>
+            </div>
+          </header>
+
+          {/* MAIN VIEWS */}
+          <main className="w-full pt-28 flex-1">
+            {currentPage === 'home' && (
+              <div className="flex flex-col w-full text-on-surface">
+                {/* Hero */}
+                <section className="relative w-full overflow-hidden -mt-28 pt-28 pb-20 bg-surface-container-lowest">
+                  <div className="absolute -top-32 left-1/4 w-[600px] h-[600px] rounded-full bg-primary-container/20 blur-[130px] pointer-events-none" />
+                  <div className="absolute top-1/2 -right-24 w-[500px] h-[500px] rounded-full bg-tertiary/10 blur-[120px] pointer-events-none" />
+
+                  <div className="max-w-7xl mx-auto px-4 md:px-16 py-16 relative z-10">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                      <div className="lg:col-span-7 flex flex-col space-y-6">
+                        <div className="inline-flex items-center gap-2 self-start px-3 py-1 bg-surface-container-high rounded-full shadow-sm">
+                          <span className="material-symbols-outlined text-[15px] text-tertiary">filter_vintage</span>
+                          <span className="font-label-caps text-xs text-tertiary uppercase tracking-widest">
+                            Haute Botanical Café &amp; Atelier
+                          </span>
+                          <span className="w-1.5 h-1.5 rounded-full bg-tertiary" />
+                          <span className="font-label-caps text-xs text-on-surface-variant uppercase">
+                            Mumbai • Paris
+                          </span>
+                        </div>
+
+                        <h1 className="font-display-hero text-4xl sm:text-5xl lg:text-6xl text-on-surface leading-[1.08] tracking-tight font-serif">
+                          Where Every Sip Blooms Into <span className="italic font-display-hero text-tertiary">Something Beautiful.</span>
+                        </h1>
+
+                        <p className="font-body-lg text-base sm:text-lg text-on-surface-variant max-w-xl leading-relaxed">
+                          Exceptional Coffee. Exquisite Bouquets. Unforgettable Moments. An unhurried sensory sanctuary celebrating slow-roasted heirloom beans and morning-cut Parisian botanicals.
+                        </p>
+
+                        <div className="flex flex-wrap items-center gap-4 pt-4">
+                          <button
+                            onClick={() => {
+                              const el = document.getElementById('catalog-section');
+                              if (el) el.scrollIntoView({ behavior: 'smooth' });
+                            }}
+                            className="px-8 py-4 bg-tertiary text-surface-container-lowest font-label-caps text-xs uppercase tracking-widest shadow-xl hover:bg-tertiary-fixed transition-all flex items-center gap-2"
+                          >
+                            <span>Explore Our Café</span>
+                            <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                          </button>
+                          <button
+                            onClick={() => setCurrentPage('reserve')}
+                            className="px-8 py-4 bg-primary-container text-tertiary font-label-caps text-xs uppercase tracking-widest shadow-lg hover:bg-secondary-container hover:text-secondary-fixed transition-all flex items-center gap-2"
+                          >
+                            <span className="material-symbols-outlined text-sm">calendar_month</span>
+                            <span>Reserve High Tea</span>
+                          </button>
+                        </div>
+                      </div>
+
+                      <div className="lg:col-span-5 relative">
+                        <div className="relative w-full aspect-[4/5] overflow-hidden rounded-xl shadow-2xl bg-surface-container">
+                          <img
+                            alt="Bloom and Brew Table"
+                            className="w-full h-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNI2huhGs99Xb2Qt7RRcouAP5kUFDwiSWKheiMOtllagSveltMmJDokJAlGBLgFvscPnRuI7L4k-2JpZ-DRHKpCZmo1fAjU8Mf-fxKVSahKh95oNI7LzRdtzgeFhcSFhUCAGfKicXNQeDlvCRn846bbiZNP_uGYlJzjmecwpUuXzVm5dt6WLkGiOW2yzosuZS2tdze-_df7mRx-hRGoEUArhA74K6RCiyz7-iXQA"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                {/* Catalog Section */}
+                <section id="catalog-section" className="py-20 bg-surface-container-lowest">
+                  <div className="max-w-7xl mx-auto px-4 md:px-16">
+                    <div className="mb-12">
+                      <span className="font-label-caps text-xs text-tertiary uppercase tracking-widest">
+                        Seasonal Salon Collection
+                      </span>
+                      <h2 className="font-display-hero text-3xl sm:text-4xl text-on-surface font-serif mt-1">
+                        Curated Atelier Creations
+                      </h2>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                      {productsData.map(product => (
+                        <div key={product.id} className="bg-surface-container rounded-xl overflow-hidden shadow-lg flex flex-col justify-between border border-tertiary/10">
+                          <div>
+                            <div className="relative aspect-[4/5] overflow-hidden bg-surface-container-high">
+                              <img src={product.image} alt={product.title} className="w-full h-full object-cover" />
+                              <span className="absolute top-3 left-3 px-2.5 py-1 bg-surface-container-lowest/80 backdrop-blur-md rounded font-label-caps text-[10px] text-tertiary uppercase">
+                                {product.badge}
+                              </span>
+                            </div>
+                            <div className="p-5">
+                              <span className="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-widest block">
+                                {product.subTitle}
+                              </span>
+                              <h3 className="font-headline-sm text-base text-on-surface mt-1 font-serif">
+                                {product.title}
+                              </h3>
+                              <p className="font-body-sm text-xs text-on-surface-variant mt-2 line-clamp-2">
+                                {product.description}
+                              </p>
+                            </div>
+                          </div>
+                          <div className="p-5 pt-0 flex items-center justify-between border-t border-tertiary/10 mt-2">
+                            <div>
+                              <span className="font-headline-sm text-lg text-tertiary font-semibold font-serif">
+                                {product.priceFormatted}
+                              </span>
+                              <span className="font-body-sm text-[11px] text-on-surface-variant block">
+                                {product.unit}
+                              </span>
+                            </div>
+                            <button
+                              aria-label="Add to cart"
+                              className="p-3 bg-primary-container text-tertiary hover:bg-secondary-container hover:text-secondary-fixed rounded transition-colors flex items-center justify-center"
+                              onClick={() => handleAddToCart(product)}
+                              type="button"
+                            >
+                              <span className="material-symbols-outlined text-lg">add_shopping_cart</span>
+                            </button>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </section>
+              </div>
+            )}
+
+            {currentPage === 'reserve' && (
+              <div className="max-w-7xl mx-auto px-4 md:px-16 py-12">
+                <div className="text-center mb-10">
+                  <span className="font-label-caps text-xs text-tertiary uppercase tracking-widest">
+                    Conservatory Floorplan &amp; Seating Engine
+                  </span>
+                  <h1 className="font-headline-lg text-3xl sm:text-5xl text-on-surface font-serif mt-2">
+                    Select Your Botanical Realm
+                  </h1>
+                </div>
+
+                {/* Zone buttons */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
+                  {Object.entries(zonesData).map(([key, zone]) => (
+                    <button
+                      key={key}
+                      onClick={() => setReservationState(prev => ({ ...prev, zone: key, zoneTitle: zone.title }))}
+                      className={`text-left p-4 rounded border transition-all ${
+                        reservationState.zone === key
+                          ? 'bg-primary-container border-tertiary shadow-md'
+                          : 'bg-surface-container border-tertiary/10 text-on-surface-variant'
+                      }`}
+                    >
+                      <span className="font-label-caps text-[10px] text-tertiary block uppercase">
+                        {zone.zoneLabel}
+                      </span>
+                      <h4 className="font-title-editorial text-sm font-semibold font-serif mt-1">
+                        {zone.shortTitle}
+                      </h4>
+                      <span className="font-body-sm text-[11px] text-on-surface-variant block mt-0.5">
+                        {zone.subText}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+
+                {/* Seating Table Grid & Interactive Map */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
+                  <div className="lg:col-span-8 bg-surface-container-high rounded-xl p-6 border border-tertiary/20">
+                    <div className="flex justify-between items-center pb-4 border-b border-tertiary/10">
+                      <h3 className="font-headline-sm text-base text-on-surface font-semibold font-serif">
+                        {zonesData[reservationState.zone].title} Seating Nodes
+                      </h3>
+                      <span className="font-label-caps text-xs text-secondary">
+                        Interactive Architectural Map
+                      </span>
+                    </div>
+
+                    <div className="min-h-[200px] bg-surface-container-lowest rounded-lg p-6 flex flex-wrap items-center justify-center gap-4 my-4 border border-tertiary/10">
+                      {zonesData[reservationState.zone].tables.map(tbl => {
+                        const isSelected = reservationState.table === tbl.label;
+                        const isReserved = tbl.status === 'reserved';
+                        let cls = 'bg-secondary text-surface-container-lowest cursor-pointer';
+                        if (isReserved) cls = 'bg-surface-container-highest text-on-surface-variant/40 opacity-60 cursor-not-allowed';
+                        if (isSelected) cls = 'bg-tertiary text-surface-container-lowest ring-4 ring-tertiary/30 font-bold';
+
+                        return (
+                          <button
+                            key={tbl.id}
+                            disabled={isReserved}
+                            onClick={() => {
+                              setReservationState(prev => ({ ...prev, table: tbl.label, tableType: tbl.type }));
+                              showToast(`Table ${tbl.label} Selected`, `${tbl.type} reserved in folio.`);
+                            }}
+                            className={`p-3 rounded-lg min-w-[110px] flex flex-col items-center justify-center transition-all ${cls}`}
+                          >
+                            <span className="material-symbols-outlined text-lg mb-1">
+                              {tbl.type.includes('2-Top') ? 'chair' : 'table_restaurant'}
+                            </span>
+                            <span className="font-headline-sm text-xs font-serif font-bold">{tbl.label}</span>
+                            <span className="font-body-sm text-[10px] opacity-80">{tbl.type}</span>
+                          </button>
+                        );
+                      })}
+                    </div>
+
+                    <div className="pt-4 border-t border-tertiary/10 flex justify-between items-center text-xs">
+                      <span>Selected Table: <strong className="text-tertiary">{reservationState.table} ({reservationState.tableType})</strong></span>
+                      <button
+                        onClick={() => setCurrentPage('confirmation')}
+                        className="px-6 py-2.5 bg-tertiary text-surface-container-lowest font-label-caps text-xs uppercase tracking-widest font-bold rounded shadow-md"
+                      >
+                        Confirm Table &amp; View Pass →
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Summary Folio */}
+                  <div className="lg:col-span-4 bg-surface-container-high rounded-xl p-6 border border-tertiary/30 space-y-4">
+                    <h3 className="font-headline-sm text-base text-on-surface font-semibold font-serif">
+                      Reservation Summary
+                    </h3>
+                    <div className="space-y-2 text-xs font-body-sm text-on-surface-variant">
+                      <div className="flex justify-between">
+                        <span>Realm:</span>
+                        <strong className="text-on-surface">{zonesData[reservationState.zone].shortTitle}</strong>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>Table:</span>
+                        <strong className="text-tertiary">{reservationState.table}</strong>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>Deposit:</span>
+                        <strong className="text-tertiary font-serif text-sm">₹{reservationState.grandTotal.toLocaleString()}</strong>
+                      </div>
+                    </div>
+                    <button
+                      onClick={() => setCurrentPage('confirmation')}
+                      className="w-full py-3 bg-tertiary text-surface-container-lowest font-label-caps text-xs uppercase tracking-widest font-bold rounded"
+                    >
+                      Proceed to Concierge Pass
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {currentPage === 'confirmation' && (
+              <div className="max-w-5xl mx-auto px-4 md:px-16 py-12">
+                <div className="bg-surface-container-low rounded-2xl p-6 sm:p-10 border border-tertiary/30 shadow-2xl space-y-8">
+                  <div className="text-center space-y-2">
+                    <span className="font-label-caps text-xs text-tertiary uppercase tracking-widest">
+                      Reservation Confirmed • Ref: {reservationState.refCode}
+                    </span>
+                    <h1 className="font-headline-lg text-3xl sm:text-4xl text-on-surface font-serif">
+                      Bienvenue, {reservationState.patronName}
+                    </h1>
+                    <p className="font-body-md text-xs sm:text-sm text-on-surface-variant max-w-xl mx-auto">
+                      Your midday botanical sanctuary has been secluded at Bloom &amp; Brew Parisian Atelier.
+                    </p>
+                  </div>
+
+                  {/* Pass Ticket */}
+                  <div className="bg-gradient-to-r from-surface-container via-surface-container-high to-surface-container p-6 sm:p-8 rounded-xl border border-tertiary/30 grid grid-cols-1 md:grid-cols-12 gap-6">
+                    <div className="md:col-span-8 space-y-4">
+                      <span className="px-2.5 py-1 rounded bg-primary-container text-tertiary font-label-caps text-[10px] uppercase font-bold">
+                        Atelier VIP Concierge Pass • 03-DOME
+                      </span>
+                      <h2 className="font-headline-md text-xl sm:text-2xl text-on-surface font-serif">
+                        The Parisian High Tea &amp; Floral Salon
+                      </h2>
+                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 p-4 bg-surface-container-lowest/60 rounded text-xs">
+                        <div>
+                          <span className="text-on-surface-variant text-[10px] uppercase block">Patron</span>
+                          <strong className="text-on-surface">{reservationState.patronName}</strong>
+                        </div>
+                        <div>
+                          <span className="text-on-surface-variant text-[10px] uppercase block">Table</span>
+                          <strong className="text-tertiary">{reservationState.table}</strong>
+                        </div>
+                        <div>
+                          <span className="text-on-surface-variant text-[10px] uppercase block">Date &amp; Time</span>
+                          <strong className="text-on-surface">{reservationState.date} • {reservationState.timeSlot}</strong>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="md:col-span-4 flex flex-col items-center justify-center p-4 bg-surface-container-high rounded text-center border-t md:border-t-0 md:border-l border-dashed border-tertiary/30">
+                      <span className="font-label-caps text-[10px] text-tertiary uppercase mb-2">VIP QR Code</span>
+                      <div className="w-24 h-24 bg-surface-container-lowest p-2 rounded border border-tertiary/40 flex items-center justify-center">
+                        <span className="material-symbols-outlined text-4xl text-tertiary">qr_code_2</span>
+                      </div>
+                      <span className="font-mono text-[9px] text-tertiary mt-2">{reservationState.refCode}</span>
+                    </div>
+                  </div>
+
+                  <div className="flex justify-between items-center pt-4 border-t border-tertiary/20">
+                    <button
+                      onClick={() => setCurrentPage('reserve')}
+                      className="px-5 py-2.5 rounded bg-surface-container-high text-xs font-label-caps uppercase text-on-surface"
+                    >
+                      Reschedule Seating
+                    </button>
+                    <button
+                      onClick={() => setCurrentPage('home')}
+                      className="px-6 py-2.5 rounded bg-primary-container text-tertiary text-xs font-label-caps uppercase tracking-widest hover:bg-secondary-container"
+                    >
+                      Return to Flagship Atelier
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+          </main>
+
+          {/* CART DRAWER */}
+          {isCartOpen && (
+            <div className="fixed inset-0 z-50 flex justify-end">
+              <div className="fixed inset-0 bg-surface-container-lowest/70 backdrop-blur-sm" onClick={() => setIsCartOpen(false)} />
+              <div className="relative w-full max-w-md bg-surface-container-high border-l border-tertiary/30 p-6 flex flex-col z-10 shadow-2xl">
+                <div className="flex justify-between items-center pb-4 border-b border-tertiary/20">
+                  <h3 className="font-headline-sm text-lg text-on-surface font-serif">Salon Cart ({cartItems.length})</h3>
+                  <button onClick={() => setIsCartOpen(false)} className="text-on-surface-variant hover:text-tertiary">
+                    <span className="material-symbols-outlined">close</span>
+                  </button>
+                </div>
+                <div className="flex-1 overflow-y-auto py-4 space-y-3">
+                  {cartItems.map(item => (
+                    <div key={item.id} className="flex gap-3 p-3 bg-surface-container rounded border border-tertiary/10">
+                      <img src={item.image} alt={item.title} className="w-14 h-16 object-cover rounded" />
+                      <div className="flex-1">
+                        <h4 className="font-headline-sm text-xs text-on-surface font-serif">{item.title}</h4>
+                        <span className="text-tertiary text-xs font-bold">₹{(item.price * item.quantity).toLocaleString()}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="pt-4 border-t border-tertiary/20">
+                  <button
+                    onClick={() => { setIsCartOpen(false); showToast('Order Placed', 'Your luxury atelier parcel is being curated.'); }}
+                    className="w-full py-3 bg-primary-container border border-tertiary text-tertiary font-label-caps text-xs uppercase tracking-widest"
+                  >
+                    Proceed to Checkout
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* TOAST */}
+          {toast.visible && (
+            <div className="fixed bottom-8 right-8 z-50 bg-surface-container-high border border-tertiary/40 p-4 rounded-xl shadow-2xl flex items-center gap-3">
+              <span className="material-symbols-outlined text-tertiary">check_circle</span>
+              <div>
+                <h4 className="text-xs font-bold text-on-surface">{toast.title}</h4>
+                <p className="text-[11px] text-on-surface-variant">{toast.subtext}</p>
+              </div>
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>
+

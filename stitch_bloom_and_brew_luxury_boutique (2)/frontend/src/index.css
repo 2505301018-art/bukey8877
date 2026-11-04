@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #1d100d;
+    color: #f7ddd7;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  
+  body {
+    overscroll-behavior: none;
+  }
+
+  main > :first-child {
+    margin-top: 0 !important;
+  }
+
+  main > :last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Luxury typography utilities */
+.font-serif,
+.font-headline-lg,
+.font-headline-md,
+.font-headline-sm,
+.font-display-hero,
+.font-title-editorial {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-body-lg,
+.font-body-md,
+.font-body-sm,
+.font-label-md,
+.font-label-caps {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+

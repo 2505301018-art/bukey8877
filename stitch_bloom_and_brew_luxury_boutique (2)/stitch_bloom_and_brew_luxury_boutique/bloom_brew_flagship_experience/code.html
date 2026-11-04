@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary-container": "#e48599", "tertiary": "#e2c383", "outline": "#a18c8e", "tertiary-fixed-dim": "#e2c383", "inverse-on-surface": "#3c2d29", "surface-container": "#2a1c19", "surface-tint": "#ffb1c0", "on-surface-variant": "#d9c1c4", "on-secondary": "#11372c", "secondary-fixed": "#c3ebdb", "inverse-primary": "#954458", "surface-dim": "#1d100d", "error": "#ffb4ab", "primary-fixed": "#ffd9df", "on-surface": "#f7ddd7", "secondary": "#a8cfc0", "surface": "#1d100d", "secondary-fixed-dim": "#a8cfc0", "on-primary": "#5b172b", "tertiary-fixed": "#ffdf9f", "on-tertiary-container": "#ba9d61", "surface-container-low": "#261815", "on-primary-fixed-variant": "#782d41", "background": "#1d100d", "on-error": "#690005", "on-error-container": "#ffdad6", "on-tertiary-fixed-variant": "#594310", "surface-bright": "#463532", "surface-container-highest": "#41312e", "on-tertiary-fixed": "#261a00", "tertiary-container": "#483402", "surface-variant": "#41312e", "surface-container-high": "#362623", "on-secondary-fixed-variant": "#294d42", "secondary-container": "#2c5044", "on-tertiary": "#402d00", "error-container": "#93000a", "on-secondary-fixed": "#002118", "on-background": "#f7ddd7", "surface-container-lowest": "#170b09", "primary-container": "#641e32", "primary": "#ffb1c0", "on-primary-fixed": "#3f0117", "outline-variant": "#534245", "inverse-surface": "#f7ddd7", "on-secondary-container": "#9ac1b2", "primary-fixed-dim": "#ffb1c0" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xl": "3rem", "space-sm": "0.5rem", "gutter-desktop": "2.5rem", "margin": "1.25rem", "margin-desktop": "4rem", "space-xs": "0.25rem", "space-md": "1rem", "space-2xl": "5rem", "space-lg": "1.75rem", "gutter": "1.5rem" }, "fontFamily": { "headline-lg": ["Playfair Display"], "display-hero": ["Playfair Display"], "label-md": ["Plus Jakarta Sans"], "display-hero-mobile": ["Playfair Display"], "body-sm": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "headline-sm": ["Playfair Display"], "headline-lg-mobile": ["Playfair Display"], "label-caps": ["Plus Jakarta Sans"], "headline-md": ["Playfair Display"], "body-md": ["Plus Jakarta Sans"], "title-editorial": ["Playfair Display"] }, "fontSize": { "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.06em", "fontWeight": "500" }], "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "300" }], "headline-sm": ["22px", { "lineHeight": "30px", "fontWeight": "500" }], "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "400" }], "label-caps": ["11px", { "lineHeight": "16px", "letterSpacing": "0.18em", "fontWeight": "600" }], "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }], "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }], "title-editorial": ["18px", { "lineHeight": "26px", "letterSpacing": "0.04em", "fontWeight": "600" }] } } } };</script></head><body class="bg-surface text-on-surface antialiased selection:bg-primary-container selection:text-primary"><header class="fixed top-0 left-0 right-0 z-40 bg-primary-container/90 backdrop-blur-md border-b border-tertiary/20"><div class="bg-surface-container-lowest text-tertiary border-b border-tertiary/20 py-1.5 px-margin md:px-margin-desktop text-center"><div class="max-w-7xl mx-auto flex items-center justify-center gap-space-sm"><span class="material-symbols-outlined text-[14px] text-tertiary">spa</span><p class="font-label-caps text-label-caps uppercase tracking-widest text-tertiary">Complimentary Parisian Floral Gift Box on all orders above ₹2,499 | Reserve Your Garden Table for High Tea</p><span class="material-symbols-outlined text-[14px] text-tertiary">spa</span></div></div><div class="h-20 max-w-7xl mx-auto px-margin md:px-margin-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><img alt="Bloom &amp; Brew Emblem" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB5HM8hMPi0PqBmd5UyFvGheoL-4dfPyGD1VHAL_vWd0EDCY3wh81UHbWS8vOzF0akqfr3V2o8P1NKDvzt5Y9uPLvEMAyOEDPwnKmoWuc7102qc6PwjJc6lppBnvxevbH7kiRQn_G4F10Y7LoFKxV2fAmlnEWKc0_-wtBzOQDP3vO1W8AA8LqvHWkPqUtVh3Gb0voqUFL7D1NbPERIiRrpZ_nIvaKDDPPmlhJqIg"/><a class="flex flex-col text-left" data-path="home" href="#"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface font-headline-sm">BLOOM &amp; BREW</span><span class="font-label-caps text-label-caps tracking-widest text-tertiary uppercase">BOTANICAL CAFÉ &amp; ATELIER</span></a></div><nav class="hidden xl:flex items-center space-x-6" data-active-classes="text-tertiary border-b border-tertiary font-medium"><a aria-current="page" class="uppercase tracking-wider transition-colors py-1 text-tertiary border-b border-tertiary font-medium" data-path="home" href="#">Home</a><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="our-story" href="#">Our Story</a><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="cafe-menu" href="#">Café Menu</a><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="flower-boutique" href="#">Flower Boutique</a><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="shop" href="#">Shop</a><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="gallery" href="#">Gallery</a><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="contact" href="#">Contact</a></nav><div class="flex items-center gap-space-sm"><button aria-label="Search Atelier" class="p-2 text-on-surface-variant hover:text-tertiary transition-colors flex items-center justify-center" type="button"><span class="material-symbols-outlined text-[22px]">search</span></button><button aria-label="Shopping Cart" class="relative p-2 text-on-surface-variant hover:text-tertiary transition-colors flex items-center justify-center" onclick="document.getElementById('cart-drawer').classList.remove('translate-x-full')" type="button"><span class="material-symbols-outlined text-[22px]">shopping_bag</span><span class="absolute top-1 right-1 h-4 min-w-[16px] px-1 rounded-full bg-tertiary text-surface-container-lowest font-label-caps text-[10px] font-bold flex items-center justify-center leading-none">2</span></button><button class="hidden sm:inline-flex items-center justify-center px-4 py-2 border border-tertiary/60 bg-primary-container text-tertiary font-label-caps text-label-caps uppercase tracking-widest shadow-[0_0_15px_rgba(226,195,131,0.2)] hover:bg-secondary-container hover:text-secondary-fixed transition-all" onclick="document.getElementById('reservation-modal').classList.remove('hidden')" type="button">Book a Table</button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-2 border border-tertiary/40"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-28 bg-surface min-h-screen"><div class="flex flex-col w-full text-on-surface">
+<!-- HERO SECTION -->
+<section class="relative w-full overflow-hidden -mt-28 pt-28 pb-space-2xl bg-surface-container-lowest">
+<!-- Ambient Golden & Burgundy Glow Gradients -->
+<div class="absolute -top-32 left-1/4 w-[600px] h-[600px] rounded-full bg-primary-container/20 blur-[130px] pointer-events-none"></div>
+<div class="absolute top-1/2 -right-24 w-[500px] h-[500px] rounded-full bg-tertiary/10 blur-[120px] pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-margin md:px-margin-desktop py-space-xl relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-center">
+<!-- Left Editorial Copy (7 cols) -->
+<div class="lg:col-span-7 flex flex-col space-y-6">
+<div class="inline-flex items-center gap-space-sm self-start px-3 py-1 bg-surface-container-high rounded-full shadow-sm">
+<span class="material-symbols-outlined text-[15px] text-tertiary">filter_vintage</span>
+<span class="font-label-caps text-label-caps text-tertiary uppercase tracking-widest">Haute Botanical Café &amp; Atelier</span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Mumbai • Paris</span>
+</div>
+<h1 class="font-display-hero text-display-hero text-on-surface leading-[1.08] tracking-tight">
+            Where Every Sip Blooms Into <span class="italic font-display-hero text-tertiary">Something Beautiful.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
+            Exceptional Coffee. Exquisite Bouquets. Unforgettable Moments. An unhurried sensory sanctuary celebrating slow-roasted heirloom beans and morning-cut Parisian botanicals.
+          </p>
+<!-- CTAs -->
+<div class="flex flex-wrap items-center gap-4 pt-4">
+<a class="px-8 py-4 bg-tertiary text-surface-container-lowest font-label-caps text-label-caps uppercase tracking-widest shadow-xl hover:bg-tertiary-fixed transition-all flex items-center gap-2 group" href="#signature-experience">
+<span>Explore Our Café</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+<a class="px-8 py-4 bg-primary-container text-tertiary font-label-caps text-label-caps uppercase tracking-widest shadow-lg hover:bg-secondary-container hover:text-secondary-fixed transition-all flex items-center gap-2" href="#featured-products">
+<span class="material-symbols-outlined text-sm text-tertiary">local_florist</span>
+<span>Shop Bouquets</span>
+</a>
+<button class="px-6 py-4 text-on-surface-variant hover:text-tertiary font-label-caps text-label-caps uppercase tracking-wider flex items-center gap-2 transition-colors" onclick="document.getElementById('reservation-modal').classList.remove('hidden')" type="button">
+<span class="material-symbols-outlined text-base">calendar_month</span>
+<span>Reserve High Tea</span>
+</button>
+</div>
+<!-- Editorial Credential Badges -->
+<div class="pt-8 flex items-center gap-8 text-on-surface-variant">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-tertiary font-semibold">100%</span>
+<span class="font-label-caps text-[10px] uppercase text-on-surface-variant tracking-wider">Arabica Single Origin</span>
+</div>
+<div class="h-8 w-px bg-surface-container-highest"></div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-tertiary font-semibold">06:00</span>
+<span class="font-label-caps text-[10px] uppercase text-on-surface-variant tracking-wider">Daily Floral Harvest</span>
+</div>
+<div class="h-8 w-px bg-surface-container-highest"></div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-tertiary font-semibold">4.9 ★</span>
+<span class="font-label-caps text-[10px] uppercase text-on-surface-variant tracking-wider">Salon Connoisseurs</span>
+</div>
+</div>
+</div>
+<!-- Right Staged Imagery (5 cols) -->
+<div class="lg:col-span-5 relative mt-6 lg:mt-0">
+<div class="relative w-full aspect-[4/5] overflow-hidden rounded-xl shadow-2xl bg-surface-container">
+<img alt="Bloom and Brew Parisian Table with Coffee and Antique Floral Arrangement" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNI2huhGs99Xb2Qt7RRcouAP5kUFDwiSWKheiMOtllagSveltMmJDokJAlGBLgFvscPnRuI7L4k-2JpZ-DRHKpCZmo1fAjU8Mf-fxKVSahKh95oNI7LzRdtzgeFhcSFhUCAGfKicXNQeDlvCRn846bbiZNP_uGYlJzjmecwpUuXzVm5dt6WLkGiOW2yzosuZS2tdze-_df7mRx-hRGoEUArhA74K6RCiyz7-iXQA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-surface-container-lowest/20 to-transparent"></div>
+<!-- Floating Salon Note Plaque -->
+<div class="absolute bottom-6 left-6 right-6 p-5 bg-surface-container-high/90 backdrop-blur-md rounded shadow-xl">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-caps text-[10px] uppercase text-tertiary tracking-widest block mb-1">Morning Salon Offering</span>
+<p class="font-title-editorial text-title-editorial text-on-surface">Antique Brass Urn with Crimson Garden Roses</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Paired with Artisanal Ethiopian Yirgacheffe Flat White</p>
+</div>
+<span class="material-symbols-outlined text-tertiary text-2xl">local_cafe</span>
+</div>
+</div>
+</div>
+<!-- Decorative Floating Corner Seal -->
+<div class="absolute -top-4 -left-4 w-20 h-20 rounded-full bg-primary-container text-tertiary flex items-center justify-center shadow-lg p-2 text-center pointer-events-none">
+<span class="font-label-caps text-[9px] uppercase tracking-tighter leading-tight font-bold">Paris • 1892 • Atelier</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Highlights Strip -->
+<div class="w-full bg-surface-container-low py-4 shadow-sm">
+<div class="max-w-7xl mx-auto px-margin md:px-margin-desktop">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+<div class="flex items-center justify-center gap-2 text-on-surface-variant hover:text-tertiary transition-colors">
+<span class="material-symbols-outlined text-tertiary text-lg">coffee_maker</span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider">Single-Origin Specialty Roasts</span>
+</div>
+<div class="flex items-center justify-center gap-2 text-on-surface-variant hover:text-tertiary transition-colors">
+<span class="material-symbols-outlined text-tertiary text-lg">spa</span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider">Fresh Parisian Morning Harvests</span>
+</div>
+<div class="flex items-center justify-center gap-2 text-on-surface-variant hover:text-tertiary transition-colors">
+<span class="material-symbols-outlined text-tertiary text-lg">redeem</span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider">Curated Luxury Hampers</span>
+</div>
+<div class="flex items-center justify-center gap-2 text-on-surface-variant hover:text-tertiary transition-colors">
+<span class="material-symbols-outlined text-tertiary text-lg">deck</span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider">Private Garden Soirées</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: OUR SIGNATURE EXPERIENCE (DUAL SECTION SHOWCASE) -->
+<section class="py-space-2xl bg-surface" id="signature-experience">
+<div class="max-w-7xl mx-auto px-margin md:px-margin-desktop">
+<div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+<span class="font-label-caps text-label-caps text-tertiary uppercase tracking-widest">Two Crafts, One Sanctuary</span>
+<h2 class="font-display-hero text-headline-lg md:text-display-hero text-on-surface">The Signature Experience</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Step into the sensory intersection where master-grade baristas and seasoned Parisian florists curate your everyday rituals.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+<!-- Pillar 1: The Café -->
+<div class="bg-surface-container rounded-xl p-8 md:p-10 shadow-xl flex flex-col justify-between group">
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<span class="px-3 py-1 bg-surface-container-highest text-tertiary font-label-caps text-label-caps uppercase tracking-wider rounded">Sensory Bar</span>
+<span class="material-symbols-outlined text-tertiary text-3xl">local_cafe</span>
+</div>
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">The Botanical Café</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+                Poured over cold-extracted rose water, micro-roasted African beans, and freshly baked flaky laminated dough prepared in our open patisserie at sunrise.
+              </p>
+</div>
+<!-- Café Feature Grid -->
+<div class="grid grid-cols-2 gap-4 pt-2">
+<div class="bg-surface-container-high p-4 rounded shadow-sm">
+<span class="font-label-caps text-[10px] text-tertiary uppercase tracking-widest block">Signature Extraction</span>
+<h4 class="font-headline-sm text-base text-on-surface mt-1">Single-Origin Pour-Overs</h4>
+<p class="font-body-sm text-xs text-on-surface-variant mt-0.5">Ethiopian Guji &amp; Geisha microlots</p>
+</div>
+<div class="bg-surface-container-high p-4 rounded shadow-sm">
+<span class="font-label-caps text-[10px] text-tertiary uppercase tracking-widest block">Floral Infusion</span>
+<h4 class="font-headline-sm text-base text-on-surface mt-1">Velvet Rose Lattes</h4>
+<p class="font-body-sm text-xs text-on-surface-variant mt-0.5">Damask rose petal nectar &amp; gold leaf</p>
+</div>
+<div class="bg-surface-container-high p-4 rounded shadow-sm">
+<span class="font-label-caps text-[10px] text-tertiary uppercase tracking-widest block">Fresh Viennoiserie</span>
+<h4 class="font-headline-sm text-base text-on-surface mt-1">Pistachio Pain au Chocolat</h4>
+<p class="font-body-sm text-xs text-on-surface-variant mt-0.5">Laminated Valrhona ganache</p>
+</div>
+<div class="bg-surface-container-high p-4 rounded shadow-sm">
+<span class="font-label-caps text-[10px] text-tertiary uppercase tracking-widest block">Kyoto Cold Brew</span>
+<h4 class="font-headline-sm text-base text-on-surface mt-1">Ceremonial Matcha Elixirs</h4>
+<p class="font-body-sm text-xs text-on-surface-variant mt-0.5">Uji first-harvest ceremonial tea</p>
+</div>
+</div>
+<div class="relative h-64 overflow-hidden rounded-lg shadow-md">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A warm, atmospheric close-up of a master barista carefully executing an intricate floral swan latte art in a fine porcelain cup on a dark polished mahogany counter surrounded by coffee beans, soft golden moody lighting, Parisian aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqHp0GfNCg_U0UG56HieSMWwobdXv8GSCj0nfkAm5ZBCHBXc1A_joQmlR4CuDYBSy4Y3WZKy2moCrrFgmy0yCeTQorGt2vpexLsUoD3UiroS5YVB1n2NVeF9ZL9-iggaPe3BNYs-l-oc2c5qbQvWBYqKG7VrUXQ0nDbm3ytguialGlx5J-gwDs_aF1oopM7BlRJLkQ4sis9fVuUBKmDkhga1Nu0u6QzCaLIy1rRA"/>
+</div>
+</div>
+<div class="pt-6 flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-tertiary uppercase">Served from 08:00 to 22:00</span>
+<a class="font-label-caps text-label-caps uppercase text-on-surface hover:text-tertiary transition-colors flex items-center gap-1" href="#featured-products">
+<span>View Tasting Menu</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Pillar 2: The Flower Boutique -->
+<div class="bg-surface-container rounded-xl p-8 md:p-10 shadow-xl flex flex-col justify-between group">
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<span class="px-3 py-1 bg-surface-container-highest text-tertiary font-label-caps text-label-caps uppercase tracking-wider rounded">Haute Floristry</span>
+<span class="material-symbols-outlined text-tertiary text-3xl">yard</span>
+</div>
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">The Flower Boutique</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+                Hand-tied bouquets composed with rare Dutch peonies, Ecuadorian garden roses, and wild eucalyptus, wrapped in heavyweight archival linen paper.
+              </p>
+</div>
+<!-- Floristry Feature Grid -->
+<div class="grid grid-cols-2 gap-4 pt-2">
+<div class="bg-surface-container-high p-4 rounded shadow-sm">
+<span class="font-label-caps text-[10px] text-tertiary uppercase tracking-widest block">Direct Auction</span>
+<h4 class="font-headline-sm text-base text-on-surface mt-1">Dutch Peonies &amp; Tulips</h4>
+<p class="font-body-sm text-xs text-on-surface-variant mt-0.5">Air-freighted weekly from Aalsmeer</p>
+</div>
+<div class="bg-surface-container-high p-4 rounded shadow-sm">
+<span class="font-label-caps text-[10px] text-tertiary uppercase tracking-widest block">Signature Stems</span>
+<h4 class="font-headline-sm text-base text-on-surface mt-1">Ecuadorian Velvet Roses</h4>
+<p class="font-body-sm text-xs text-on-surface-variant mt-0.5">Deep crimson long-stem varietals</p>
+</div>
+<div class="bg-surface-container-high p-4 rounded shadow-sm">
+<span class="font-label-caps text-[10px] text-tertiary uppercase tracking-widest block">Centerpieces</span>
+<h4 class="font-headline-sm text-base text-on-surface mt-1">Antique Urn Installations</h4>
+<p class="font-body-sm text-xs text-on-surface-variant mt-0.5">Sculptural dining table statements</p>
+</div>
+<div class="bg-surface-container-high p-4 rounded shadow-sm">
+<span class="font-label-caps text-[10px] text-tertiary uppercase tracking-widest block">Bespoke Concierge</span>
+<h4 class="font-headline-sm text-base text-on-surface mt-1">Custom Message Ribbons</h4>
+<p class="font-body-sm text-xs text-on-surface-variant mt-0.5">Hot-stamped gold monograms</p>
+</div>
+</div>
+<div class="relative h-64 overflow-hidden rounded-lg shadow-md">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A luxurious Parisian floral studio workshop with a florist in dark apron delicately arranging deep burgundy garden roses, pink peonies and fragrant eucalyptus branches into a fluted antique gold urn with soft dramatic chiaroscuro illumination." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACoj4oRFCsNNytbP-HoFpIiLv2H8JxPun3vEXUSwJB8EgTSGHDPNCV6mw7Mln7xSToHjvvxdvWguUAmti5sNeE-Wro9A_zsb3x8SqN8V95AGLpK28QvHsRh6Jc-dVEG8JTjicOexH-7rKF7rUqHb-1bjODpLEoE213QotROSvAFLw_K_HgO61e6yXtNUoUWH7uamjzXN7GvHS3WSC7a-7D4HmnJ-B7VuAk-6WNSg"/>
+</div>
+</div>
+<div class="pt-6 flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-tertiary uppercase">Same-Day City Delivery</span>
+<a class="font-label-caps text-label-caps uppercase text-on-surface hover:text-tertiary transition-colors flex items-center gap-1" href="#featured-products">
+<span>Explore Blooms</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: FEATURED PRODUCTS COLLECTION (WITH TABS) -->
+<section class="py-space-2xl bg-surface-container-lowest" id="featured-products">
+<div class="max-w-7xl mx-auto px-margin md:px-margin-desktop">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+<div>
+<span class="font-label-caps text-label-caps text-tertiary uppercase tracking-widest">Seasonal Salon Collection</span>
+<h2 class="font-display-hero text-headline-lg md:text-display-hero text-on-surface mt-1">Curated Atelier Creations</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-xl">Artisanal coffees crafted at order, hand-tied botanical bouquets, and bespoke luxury gift hampers.</p>
+</div>
+<!-- Filter Tabs -->
+<div class="flex flex-wrap items-center gap-2 p-1.5 bg-surface-container rounded-lg self-start md:self-auto" id="product-filter-container">
+<button class="product-filter-btn px-4 py-2 rounded font-label-caps text-label-caps uppercase tracking-wider bg-tertiary text-surface-container-lowest transition-all" onclick="filterProducts('all', this)" type="button">All Curations</button>
+<button class="product-filter-btn px-4 py-2 rounded font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" onclick="filterProducts('cafe', this)" type="button">Café Specials</button>
+<button class="product-filter-btn px-4 py-2 rounded font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" onclick="filterProducts('floral', this)" type="button">Floral Bouquets</button>
+<button class="product-filter-btn px-4 py-2 rounded font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" onclick="filterProducts('hampers', this)" type="button">Gift Hampers</button>
+</div>
+</div>
+<!-- Product Cards Grid (8 authentic products) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="product-grid">
+<!-- 1: Gold Crema Pour-Over -->
+<div class="product-card cafe bg-surface-container rounded-xl overflow-hidden shadow-lg flex flex-col justify-between group transition-all duration-300">
+<div>
+<div class="relative aspect-[4/5] overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="An artisanal single-origin Ethiopian pour-over coffee served in a fluted white ceramic cup on a dark marble table with a swan neck copper kettle in the background, amber Crema shimmering under soft Parisian salon sunlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp7cx0kHO5WTggWOCZp0MvB3CaPx33QDlciJJq4ecpDYbUPAoDsYPAcPKjDolZK5SrhivcRmbwQQvpzbv7Xn0gdhV71pbioAr0dvTt9JRfKN8CO7YaalBsXo98EzYByDmOTCI2kDpoYubve08QuhqHC7oOyCTljWPg7DmPtiXSWnib4mdYDyU5wi5pRtv7Itl27vK8msA7WJ2rKOdkWa1RRoxaauRdzCodRzgXJg"/>
+<span class="absolute top-3 left-3 px-2.5 py-1 bg-surface-container-lowest/80 backdrop-blur-md rounded font-label-caps text-[10px] text-tertiary uppercase tracking-wider">Single Origin</span>
+</div>
+<div class="p-5">
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-widest block">Signature Brew</span>
+<h3 class="font-headline-sm text-lg text-on-surface mt-1 group-hover:text-tertiary transition-colors">Gold Crema Single-Origin Ethiopian Pour-Over</h3>
+<p class="font-body-sm text-xs text-on-surface-variant mt-2 line-clamp-2">Slow-dripped Yirgacheffe harvest with notes of jasmine blossom, candied bergamot, and a silky golden crema finish.</p>
+</div>
+</div>
+<div class="p-5 pt-0 flex items-center justify-between border-t border-tertiary/10 mt-2">
+<div>
+<span class="font-headline-sm text-lg text-tertiary font-semibold">₹380</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant block">Single Cup 250ml</span>
+</div>
+<button aria-label="Add to cart" class="p-3 bg-primary-container text-tertiary hover:bg-secondary-container hover:text-secondary-fixed rounded shadow-sm transition-colors flex items-center justify-center" onclick="addToCartItem('Gold Crema Ethiopian Pour-Over', '₹380')" type="button">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- 2: Velvet Rose Infused Cappuccino -->
+<div class="product-card cafe bg-surface-container rounded-xl overflow-hidden shadow-lg flex flex-col justify-between group transition-all duration-300">
+<div>
+<div class="relative aspect-[4/5] overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A delicate cappuccino crowned with velvety microfoam, edible dried rose petals, and a dusting of genuine 24k edible gold leaf, placed next to a vintage brass spoon on French café marble." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiJEFsKbrVgMTqJz7EvJUSeZpTWENbR6J4F-pvvYtvH5Ln8RY7L9EzhWjR7ItI3eZwHW_tiZ8usMG3qiWRXguq7L53tIpWg4x89jPGuG6aLEew5ihwQvSw1Dn4yEerrf3cAJgAOahrqTlhKGWdTAJg3Z_6r7kNlN2ry__GgCcs19_6no_ub_C9g1J3n3zmgERXh7s5ik_BHFd1wKF1TG8hlInlEK3DSNu1n8rhyw"/>
+<span class="absolute top-3 left-3 px-2.5 py-1 bg-surface-container-lowest/80 backdrop-blur-md rounded font-label-caps text-[10px] text-tertiary uppercase tracking-wider">Patron Favorite</span>
+</div>
+<div class="p-5">
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-widest block">Botanical Specialty</span>
+<h3 class="font-headline-sm text-lg text-on-surface mt-1 group-hover:text-tertiary transition-colors">Velvet Rose Infused Cappuccino with Gold Leaf</h3>
+<p class="font-body-sm text-xs text-on-surface-variant mt-2 line-clamp-2">Double shot espresso steeped with Ispahan rose essence, steamed whole milk, topped with 24K edible gold flake.</p>
+</div>
+</div>
+<div class="p-5 pt-0 flex items-center justify-between border-t border-tertiary/10 mt-2">
+<div>
+<span class="font-headline-sm text-lg text-tertiary font-semibold">₹420</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant block">Warm Porcelain</span>
+</div>
+<button aria-label="Add to cart" class="p-3 bg-primary-container text-tertiary hover:bg-secondary-container hover:text-secondary-fixed rounded shadow-sm transition-colors flex items-center justify-center" onclick="addToCartItem('Velvet Rose Infused Cappuccino', '₹420')" type="button">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- 3: Iced Spanish Latte -->
+<div class="product-card cafe bg-surface-container rounded-xl overflow-hidden shadow-lg flex flex-col justify-between group transition-all duration-300">
+<div>
+<div class="relative aspect-[4/5] overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A tall crystal ribbed tumbler filled with layered iced Spanish latte, creamy condensed milk base, dark espresso swirl, and genuine Madagascar vanilla bean pod resting alongside." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAC0pfWFJclR-V66j1z22KwY9r89FCfxzaoaQRXP0hCBKMLjRHteXkSCrL-HYQTvtDmWaA-N0sLnkRc92e2MtyIR3-zLN-GXolzU4x3tM_Q6AWkjYUWgNQqO1JCJc7dRVQuvFs5i0AaobgToraePG86g5k6o7Ga2ny7IdS5S9M-cSBAle0WhHcmbB126GQuOt8Nq4Q81AVz9JM_UhyrQbpnmqByHOhHzb0vxuZ6Mw"/>
+<span class="absolute top-3 left-3 px-2.5 py-1 bg-surface-container-lowest/80 backdrop-blur-md rounded font-label-caps text-[10px] text-tertiary uppercase tracking-wider">Cold Brewed</span>
+</div>
+<div class="p-5">
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-widest block">Signature Iced</span>
+<h3 class="font-headline-sm text-lg text-on-surface mt-1 group-hover:text-tertiary transition-colors">Madagascar Vanilla &amp; Condensed Milk Espresso</h3>
+<p class="font-body-sm text-xs text-on-surface-variant mt-2 line-clamp-2">Chilled double ristretto layered over velvety sweetened condensed milk infused with cured bourbon vanilla pods.</p>
+</div>
+</div>
+<div class="p-5 pt-0 flex items-center justify-between border-t border-tertiary/10 mt-2">
+<div>
+<span class="font-headline-sm text-lg text-tertiary font-semibold">₹460</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant block">Tall Ribbed Crystal</span>
+</div>
+<button aria-label="Add to cart" class="p-3 bg-primary-container text-tertiary hover:bg-secondary-container hover:text-secondary-fixed rounded shadow-sm transition-colors flex items-center justify-center" onclick="addToCartItem('Iced Spanish Madagascar Latte', '₹460')" type="button">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- 4: Valrhona Dark Chocolate Croissant -->
+<div class="product-card cafe bg-surface-container rounded-xl overflow-hidden shadow-lg flex flex-col justify-between group transition-all duration-300">
+<div>
+<div class="relative aspect-[4/5] overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Golden brown, flaky layered French chocolate croissant dusted with cocoa nibs and powdered sugar, sliced open to show molten Valrhona dark chocolate core on dark slate porcelain." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrU1T0gH_7m7GWKTSObQc8Yyef3sbn9wB9x1o7nzuUy-1XN-jA4YAIlNQZfz4A6JprjmfnKFQ88Wc_ehyyayWt-myYhv1nQRQLQMy4gFhlEkwFJaEP1ZH8HPFz_vOEwdKFmT4cpq4nvza5bMClK9eHcRhDmwSOtlURUt0erklxhv117cMY6CILVTX0IZih2_OSDMkL0XsSs80GsjOQjTzqgpCY4zMU5grzSuXXwQ"/>
+<span class="absolute top-3 left-3 px-2.5 py-1 bg-surface-container-lowest/80 backdrop-blur-md rounded font-label-caps text-[10px] text-tertiary uppercase tracking-wider">Baked Fresh 07:00</span>
+</div>
+<div class="p-5">
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-widest block">Viennoiserie</span>
+<h3 class="font-headline-sm text-lg text-on-surface mt-1 group-hover:text-tertiary transition-colors">Valrhona 70% Dark Chocolate Feuilleté Croissant</h3>
+<p class="font-body-sm text-xs text-on-surface-variant mt-2 line-clamp-2">Laminated French cultured butter dough folded twenty-seven times around dual batons of Valrhona Guanaja chocolate.</p>
+</div>
+</div>
+<div class="p-5 pt-0 flex items-center justify-between border-t border-tertiary/10 mt-2">
+<div>
+<span class="font-headline-sm text-lg text-tertiary font-semibold">₹340</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant block">Patisserie Oven Fresh</span>
+</div>
+<button aria-label="Add to cart" class="p-3 bg-primary-container text-tertiary hover:bg-secondary-container hover:text-secondary-fixed rounded shadow-sm transition-colors flex items-center justify-center" onclick="addToCartItem('Valrhona Chocolate Croissant', '₹340')" type="button">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- 5: The Grand Romance Rose Bouquet -->
+<div class="product-card floral bg-surface-container rounded-xl overflow-hidden shadow-lg flex flex-col justify-between group transition-all duration-300">
+<div>
+<div class="relative aspect-[4/5] overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A gigantic, dramatic luxury floral bouquet of 50 deep crimson Ecuadorian velvet garden roses wrapped in matte charcoal black paper with flowing gold satin ribbon, moody shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArtVquYuJWipOMDtyLIWNfyQtS3fZMCzCALsJnyXSrhAldnJPpoMPpY1Scyl2d5iFyP7X6kBl8DgARKn1sPHvMLNvYxhmZu61b6mI4QoDB4dlKBYQC5bdlS-dfAwNWD8CePOUNKic2yvgOQr5Iso42a28JbVZlQV1dSBEvYRIIHT0WOoTV5Rtdm9XNdcidfzLVbQnZ2vYjcc73mJ9W-GCaGKEX0dGDluhq8FkukQ"/>
+<span class="absolute top-3 left-3 px-2.5 py-1 bg-surface-container-lowest/80 backdrop-blur-md rounded font-label-caps text-[10px] text-tertiary uppercase tracking-wider">Couture Floristry</span>
+</div>
+<div class="p-5">
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-widest block">Haute Bouquet</span>
+<h3 class="font-headline-sm text-lg text-on-surface mt-1 group-hover:text-tertiary transition-colors">The Grand Romance — 50 Deep Crimson Garden Roses</h3>
+<p class="font-body-sm text-xs text-on-surface-variant mt-2 line-clamp-2">Half-century of hand-selected Ecuadorian long-stem roses enveloped in midnight tissue and tied with bespoke gold foil monogram.</p>
+</div>
+</div>
+<div class="p-5 pt-0 flex items-center justify-between border-t border-tertiary/10 mt-2">
+<div>
+<span class="font-headline-sm text-lg text-tertiary font-semibold">₹4,800</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant block">Luxury Presentation Box</span>
+</div>
+<button aria-label="Add to cart" class="p-3 bg-primary-container text-tertiary hover:bg-secondary-container hover:text-secondary-fixed rounded shadow-sm transition-colors flex items-center justify-center" onclick="addToCartItem('The Grand Romance 50 Roses', '₹4,800')" type="button">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- 6: Spring in Provence Pink Tulips -->
+<div class="product-card floral bg-surface-container rounded-xl overflow-hidden shadow-lg flex flex-col justify-between group transition-all duration-300">
+<div>
+<div class="relative aspect-[4/5] overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A tight, elegant bunch of twenty fresh French pink and peach fringed tulips hand-tied with raw natural linen cord resting on a vintage wooden worktable with scattered green leaves." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgXD5CMm6hLhq164-WvdmxR0jlzLNBWWSjB9foRCjo_e6r80TvkBOc3kXKUelIvdLSobYrpdQGJFnrIEXVnqmHhrR7_r8BytlxKtUzNFkny_foFwjx63crZ6-i3_5SwEYXPLcfeQqSsTllAzdiNDCRJ82B8wTiqjZTQYm2XwE-3a4GmI2qVvm8DY-SJEu61pQHZ_UgljSVGcqxlgunWthU58d93xACun6qeXCgqw"/>
+<span class="absolute top-3 left-3 px-2.5 py-1 bg-surface-container-lowest/80 backdrop-blur-md rounded font-label-caps text-[10px] text-tertiary uppercase tracking-wider">Dutch Import</span>
+</div>
+<div class="p-5">
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-widest block">Seasonal Bloom</span>
+<h3 class="font-headline-sm text-lg text-on-surface mt-1 group-hover:text-tertiary transition-colors">Spring in Provence — Hand-Tied French Pink Tulips</h3>
+<p class="font-body-sm text-xs text-on-surface-variant mt-2 line-clamp-2">Crisp, dew-dusted French pink fringed tulips complemented by fragrant Italian ruscus and raw Japanese craft paper wrap.</p>
+</div>
+</div>
+<div class="p-5 pt-0 flex items-center justify-between border-t border-tertiary/10 mt-2">
+<div>
+<span class="font-headline-sm text-lg text-tertiary font-semibold">₹3,600</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant block">Hand-Tied 24 Stems</span>
+</div>
+<button aria-label="Add to cart" class="p-3 bg-primary-container text-tertiary hover:bg-secondary-container hover:text-secondary-fixed rounded shadow-sm transition-colors flex items-center justify-center" onclick="addToCartItem('Spring in Provence French Tulips', '₹3,600')" type="button">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- 7: The Versailles Urn Arrangement -->
+<div class="product-card floral bg-surface-container rounded-xl overflow-hidden shadow-lg flex flex-col justify-between group transition-all duration-300">
+<div>
+<div class="relative aspect-[4/5] overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A grand ornamental bronze urn overflowing with cloud-like blue hydrangeas, blush Dutch peonies, white phalaenopsis orchids, and silver dollar eucalyptus, standing on a grand dining banquet." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWTyCsFQDLDAFqnpn9uGyiDU7_XqXJjhdvUq_HOHWmBtJ95NXNroNFSEHU297g_sWn1h2fORwkAbQ4PUBxxG_EQkPnnNKbJt46Y2kT2B7v5KKmPeHweZvcb6ZeRHjkxmrXhM3RPxmq81kXDfDR-MW1bc7ToS7ixr_LK_eqIQmUxW9mNit-OlKAtBcKcfIXD_fJIt0_ZvQrLhWEEjV9nsAohyzNSdeRh-1EpVAM3w"/>
+<span class="absolute top-3 left-3 px-2.5 py-1 bg-surface-container-lowest/80 backdrop-blur-md rounded font-label-caps text-[10px] text-tertiary uppercase tracking-wider">Centerpiece Urn</span>
+</div>
+<div class="p-5">
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-widest block">Signature Centerpiece</span>
+<h3 class="font-headline-sm text-lg text-on-surface mt-1 group-hover:text-tertiary transition-colors">The Versailles Urn — Hydrangeas, Peonies &amp; Orchids</h3>
+<p class="font-body-sm text-xs text-on-surface-variant mt-2 line-clamp-2">Architectural floral composition in an aged brass urn featuring antique blue hydrangeas, white moth orchids, and cascading ivy.</p>
+</div>
+</div>
+<div class="p-5 pt-0 flex items-center justify-between border-t border-tertiary/10 mt-2">
+<div>
+<span class="font-headline-sm text-lg text-tertiary font-semibold">₹5,900</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant block">Aged Brass Vessel Included</span>
+</div>
+<button aria-label="Add to cart" class="p-3 bg-primary-container text-tertiary hover:bg-secondary-container hover:text-secondary-fixed rounded shadow-sm transition-colors flex items-center justify-center" onclick="addToCartItem('The Versailles Urn Arrangement', '₹5,900')" type="button">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- 8: The Bespoke Botanical Hamper -->
+<div class="product-card hampers bg-surface-container rounded-xl overflow-hidden shadow-lg flex flex-col justify-between group transition-all duration-300">
+<div>
+<div class="relative aspect-[4/5] overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="An opulent leather-trimmed botanical hamper trunk opened to reveal a petite bouquet of English roses, a gold tin of Ethiopian coffee beans, artisanal honey jar, and hand-poured jasmine candle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqn5oBqCWjV4TvUpP5iyi1haGuj0uJKcIY4Irs2WLAQIAzpHWH5MFuq4cG8jjL8YvQshYkDraGy3qBd0sLlNoAM8Ps8X94ajDqFr93VW10oanpGWWSfxSvlwBImwS3lFgp4LRH7PPhvN9XdPfAA_GwDX7g1QxbIY099gFKnJddUeRJpfAv0xEahqJ40pyD5b8oI9E4ZFmf6V10rOEKZEK-XeLVY_czCuFWSYvl6w"/>
+<span class="absolute top-3 left-3 px-2.5 py-1 bg-surface-container-lowest/80 backdrop-blur-md rounded font-label-caps text-[10px] text-tertiary uppercase tracking-wider">Luxury Trunk</span>
+</div>
+<div class="p-5">
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-widest block">Curated Gift Hamper</span>
+<h3 class="font-headline-sm text-lg text-on-surface mt-1 group-hover:text-tertiary transition-colors">The Bespoke Botanical Hamper with Coffee Beans</h3>
+<p class="font-body-sm text-xs text-on-surface-variant mt-2 line-clamp-2">Handmade leatherette trunk with 250g heirloom roast, preserved rose dome, Madagascar bean syrup, and custom calligraphed letter.</p>
+</div>
+</div>
+<div class="p-5 pt-0 flex items-center justify-between border-t border-tertiary/10 mt-2">
+<div>
+<span class="font-headline-sm text-lg text-tertiary font-semibold">₹6,500</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant block">Monogram Trunk Set</span>
+</div>
+<button aria-label="Add to cart" class="p-3 bg-primary-container text-tertiary hover:bg-secondary-container hover:text-secondary-fixed rounded shadow-sm transition-colors flex items-center justify-center" onclick="addToCartItem('The Bespoke Botanical Hamper', '₹6,500')" type="button">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: OUR STORY (EDITORIAL SPLIT SCREEN) -->
+<section class="py-space-2xl bg-surface relative overflow-hidden">
+<div class="max-w-7xl mx-auto px-margin md:px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-center">
+<!-- Left Image Composition (5 cols) -->
+<div class="lg:col-span-5 relative">
+<div class="relative w-full aspect-[3/4] rounded-xl overflow-hidden shadow-2xl bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="An atmospheric black and white vintage photograph with golden sepia undertones of two founders sitting in an authentic Parisian courtyard atelier surrounded by antique brass espresso machines and buckets of wild peonies." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLhRgvpShtphUMeuhOb6YsVV5fjzQsrFUe6gv3q1fS5mAFuUUBsLOpATOEWU0u5_haR3G1-52-0On1VlAw61EXhFTh2Vqyf59HId5FWyXwq1B63NyJw0Z5YBqKGTPdOr5L8UtlYE3L-DA9rvetoyauoPrpOngkxZfyWLvIpLpzizdKsrBnfLP-P3Pp3WymXadMh3dZ_7mK_GCWckT7WrSYlew8qYhtXxyfg3gXZQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-transparent"></div>
+</div>
+<!-- Overlapping Card -->
+<div class="absolute -bottom-8 -right-6 w-3/4 p-6 bg-surface-container-high rounded-lg shadow-2xl hidden sm:block">
+<span class="font-label-caps text-[10px] text-tertiary uppercase tracking-widest block">Philosophie de Salon</span>
+<p class="font-headline-sm text-sm text-on-surface mt-1 italic">"We believe the steam from fresh espresso and the fragrance of opening petals speak the very same dialect of gratitude."</p>
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase mt-2 block">— Henri &amp; Camille Delacroix, Founders</span>
+</div>
+</div>
+<!-- Right Narrative (7 cols) -->
+<div class="lg:col-span-7 flex flex-col space-y-6 lg:pl-6 mt-12 lg:mt-0">
+<div class="inline-flex items-center gap-2 self-start px-3 py-1 bg-surface-container rounded-full">
+<span class="material-symbols-outlined text-[15px] text-tertiary">history_edu</span>
+<span class="font-label-caps text-label-caps text-tertiary uppercase tracking-widest">Heritage &amp; Provenance</span>
+</div>
+<h2 class="font-display-hero text-headline-lg md:text-display-hero text-on-surface leading-tight">
+            The Harmony of Roasted Aromas &amp; Fresh Petals
+          </h2>
+<div class="space-y-4 font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<p>
+              Born from a quiet corner of the Marais in Paris and reborn in the verdant heart of Mumbai, <strong class="text-on-surface font-medium">BLOOM &amp; BREW</strong> was founded on a simple revelation: both the master barista and the haute floriste are artisans of fleeting perfection.
+            </p>
+<p>
+              Each morning at 05:30 AM, while our head roaster calibrates the water temperature and dial-in profiles of microlot Ethiopian beans, our floral team gathers stems fresh from cold-chain arrivals. We do not place flowers in our café as afterthoughts; our café exists inside an operating botanical atelier.
+            </p>
+<p>
+              When you sit by our zinc counters or beneath our jasmine arbor, the warmth of dark chocolate notes interlaces naturally with the cool, green sweetness of opening peonies. Here, time loses its urgency.
+            </p>
+</div>
+<!-- Feature Bullets -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+<div class="p-4 bg-surface-container-low rounded flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary text-xl flex-shrink-0 mt-0.5">nest_eco_leaf</span>
+<div>
+<h4 class="font-title-editorial text-sm text-on-surface">Zero-Plastic Floristry</h4>
+<p class="font-body-sm text-xs text-on-surface-variant mt-1">Biodegradable twine, linen wraps, and reusable brass urns exclusively.</p>
+</div>
+</div>
+<div class="p-4 bg-surface-container-low rounded flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary text-xl flex-shrink-0 mt-0.5">verified</span>
+<div>
+<h4 class="font-title-editorial text-sm text-on-surface">Direct-Trade Coffee</h4>
+<p class="font-body-sm text-xs text-on-surface-variant mt-1">Sourced ethically from multi-generational family estates in Coorg and Yirgacheffe.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: SPECIAL MOMENTS -->
+<section class="py-space-2xl bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto px-margin md:px-margin-desktop">
+<div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+<span class="font-label-caps text-label-caps text-tertiary uppercase tracking-widest">Celebrate In The Atelier</span>
+<h2 class="font-display-hero text-headline-lg md:text-display-hero text-on-surface">Crafted For Life's Special Moments</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">From intimate morning milestones to private candlelit salon takeovers, we transform celebrations into sensory poetry.</p>
+</div>
+<!-- Moments Interactive Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+<!-- Moment 1 -->
+<div class="bg-surface-container p-6 rounded-xl shadow-lg flex flex-col justify-between hover:bg-surface-container-high transition-all group">
+<div class="space-y-4">
+<div class="w-12 h-12 rounded-full bg-primary-container text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">cake</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-lg text-on-surface group-hover:text-tertiary transition-colors">Birthday Bouquets &amp; Sweets</h3>
+<p class="font-body-sm text-xs text-on-surface-variant mt-2">Bespoke pastel bloom boxes accompanied by fresh morning macarons and hand-piped celebratory cakes.</p>
+</div>
+</div>
+<button class="mt-6 font-label-caps text-[11px] text-tertiary uppercase tracking-wider text-left flex items-center gap-1 group-hover:translate-x-1 transition-transform" onclick="showToast('Inquiring for Birthday Florals &amp; Patisserie')" type="button">
+<span>Inquire Package</span>
+<span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+<!-- Moment 2 -->
+<div class="bg-surface-container p-6 rounded-xl shadow-lg flex flex-col justify-between hover:bg-surface-container-high transition-all group">
+<div class="space-y-4">
+<div class="w-12 h-12 rounded-full bg-primary-container text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">favorite</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-lg text-on-surface group-hover:text-tertiary transition-colors">Anniversary Candlelight</h3>
+<p class="font-body-sm text-xs text-on-surface-variant mt-2">A private salon alcove draped in velvety garden roses, flickering beeswax candelabras, and signature tasting flights.</p>
+</div>
+</div>
+<button class="mt-6 font-label-caps text-[11px] text-tertiary uppercase tracking-wider text-left flex items-center gap-1 group-hover:translate-x-1 transition-transform" onclick="showToast('Inquiring for Anniversary Candlelight Experience')" type="button">
+<span>Inquire Package</span>
+<span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+<!-- Moment 3 -->
+<div class="bg-surface-container p-6 rounded-xl shadow-lg flex flex-col justify-between hover:bg-surface-container-high transition-all group">
+<div class="space-y-4">
+<div class="w-12 h-12 rounded-full bg-primary-container text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">local_cafe</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-lg text-on-surface group-hover:text-tertiary transition-colors">High Tea &amp; Dates</h3>
+<p class="font-body-sm text-xs text-on-surface-variant mt-2">Three-tiered fine bone china service featuring savory brioche, floral petit fours, and single-origin pour-overs.</p>
+</div>
+</div>
+<button class="mt-6 font-label-caps text-[11px] text-tertiary uppercase tracking-wider text-left flex items-center gap-1 group-hover:translate-x-1 transition-transform" onclick="document.getElementById('reservation-modal').classList.remove('hidden')" type="button">
+<span>Book Table</span>
+<span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+<!-- Moment 4 -->
+<div class="bg-surface-container p-6 rounded-xl shadow-lg flex flex-col justify-between hover:bg-surface-container-high transition-all group">
+<div class="space-y-4">
+<div class="w-12 h-12 rounded-full bg-primary-container text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">deck</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-lg text-on-surface group-hover:text-tertiary transition-colors">Garden Soirées</h3>
+<p class="font-body-sm text-xs text-on-surface-variant mt-2">Exclusive buyout of our outdoor glass conservatory for up to 25 esteemed guests with bespoke sommelier bar.</p>
+</div>
+</div>
+<button class="mt-6 font-label-caps text-[11px] text-tertiary uppercase tracking-wider text-left flex items-center gap-1 group-hover:translate-x-1 transition-transform" onclick="showToast('Inquiring for Conservatory Garden Buyout')" type="button">
+<span>Inquire Buyout</span>
+<span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+<!-- Moment 5 -->
+<div class="bg-surface-container p-6 rounded-xl shadow-lg flex flex-col justify-between hover:bg-surface-container-high transition-all group">
+<div class="space-y-4">
+<div class="w-12 h-12 rounded-full bg-primary-container text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">featured_seasonal_and_gifts</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-lg text-on-surface group-hover:text-tertiary transition-colors">Corporate Gifting</h3>
+<p class="font-body-sm text-xs text-on-surface-variant mt-2">Custom monogrammed wooden caskets with roasted bean canisters, brass drippers, and preserved botanical urns.</p>
+</div>
+</div>
+<button class="mt-6 font-label-caps text-[11px] text-tertiary uppercase tracking-wider text-left flex items-center gap-1 group-hover:translate-x-1 transition-transform" onclick="showToast('Opening Corporate Hamper Concierge')" type="button">
+<span>Corporate Orders</span>
+<span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Luxury CTA Banner: Custom Hamper Builder -->
+<div class="mt-12 bg-primary-container rounded-2xl p-8 md:p-12 relative overflow-hidden shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="relative z-10 max-w-xl space-y-3">
+<span class="font-label-caps text-label-caps text-tertiary uppercase tracking-widest">Bespoke Atelier Service</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Design Your Custom Botanical &amp; Coffee Trunk</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Choose your recipient's favorite roast, preferred floral palette, calligraphed letter seal, and velvet ribbon finish.</p>
+</div>
+<div class="relative z-10 flex-shrink-0">
+<button class="px-8 py-4 bg-tertiary text-surface-container-lowest font-label-caps text-label-caps uppercase tracking-widest shadow-xl hover:bg-tertiary-fixed transition-all flex items-center gap-2" onclick="showToast('Bespoke Trunk Builder: Concierge Chat Initiated')" type="button">
+<span class="material-symbols-outlined text-lg">auto_awesome</span>
+<span>Create Your Perfect Gift</span>
+</button>
+</div>
+<!-- Decorative Glow -->
+<div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-tertiary/10 blur-[90px] pointer-events-none"></div>
+</div>
+</div>
+</section>
+<!-- SECTION 6: GALLERY (INSTAGRAM & ATELIER EXHIBITION) -->
+<section class="py-space-2xl bg-surface">
+<div class="max-w-7xl mx-auto px-margin md:px-margin-desktop">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+<div>
+<span class="font-label-caps text-label-caps text-tertiary uppercase tracking-widest">Visual Diary</span>
+<h2 class="font-display-hero text-headline-lg md:text-display-hero text-on-surface mt-1">Moments at the Atelier</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">A photographic glimpse into our everyday harmony of steam, porcelain, and petals.</p>
+</div>
+<a class="inline-flex items-center gap-2 px-4 py-2 bg-surface-container rounded-full text-on-surface hover:text-tertiary transition-colors self-start md:self-auto shadow-sm" href="https://instagram.com" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-tertiary text-base">photo_camera</span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider">@BloomAndBrewAtelier</span>
+</a>
+</div>
+<!-- Masonry-Style Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Image 1 -->
+<div class="relative group overflow-hidden rounded-xl bg-surface-container aspect-square shadow-lg">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Intricate latte art being carefully poured into an ornate dark porcelain cup by an artisan barista, creamy microfoam forming layered rosetta patterns, steam rising gently." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaaVzEf2Ra-TLlgb0ebWqCSBNz5Byji3_xVhzkQH1auWtHs12-UbSo2K04VPcvWYpuvxdQ57EAGykQ6s6wy9eWayWeLcDgcWvnr_mxt7YiabrI6oUTId99J73gJ7AOR-ZDojAirfSWCSUGhi2R_No29EKaq2Nf9wYb3YVNBB8BD4Y3WvcAizDJKRLkdG8nuwBhZavW9XWa2_gWoCfN48_hmCC4PBMaVEd7HcA5Hw"/>
+<div class="absolute inset-0 bg-surface-container-lowest/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<span class="font-label-caps text-[10px] text-tertiary uppercase tracking-widest">Precision Pour</span>
+<p class="font-headline-sm text-sm text-on-surface mt-1">Geisha Roast Swan Rosetta</p>
+<span class="font-body-sm text-[11px] text-on-surface-variant mt-1">#EspressoArt #BloomAndBrew</span>
+</div>
+</div>
+<!-- Image 2 -->
+<div class="relative group overflow-hidden rounded-xl bg-surface-container aspect-square shadow-lg">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Florist hands delicately trimming stems of fresh pink peonies and crimson ranunculus over a rustic wooden table scattered with floral shear tools and velvet ribbons." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy_5qn8R13CGG4h13QVaUWDBJ7WaZhXq53c-p6scgcXYAHeJw9gfXubiBvSPNSpOoHzuigaRdm6c5VvaXOQ-N1U_6PyaqRzcKNh9v8Fjvcps_stDuIIM3UjgPNRiyPL40qPjQPYCwaaV3IJqVpXb6p3JS0LNz2f93jlrr2jMSOxj_oFjozb481DufuLntQt6lHjRbjgqbEitm1I042Xgb-77w-rKUrf4Y66ZUhAg"/>
+<div class="absolute inset-0 bg-surface-container-lowest/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<span class="font-label-caps text-[10px] text-tertiary uppercase tracking-widest">Daily Harvest</span>
+<p class="font-headline-sm text-sm text-on-surface mt-1">Stem Selection for The Montmartre Bouquet</p>
+<span class="font-body-sm text-[11px] text-on-surface-variant mt-1">#HauteFloristry #PeonySeason</span>
+</div>
+</div>
+<!-- Image 3 -->
+<div class="relative group overflow-hidden rounded-xl bg-surface-container aspect-square shadow-lg">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Moody, romantic evening candlelit marble table inside the Parisian café, glowing brass lamps, wine glasses with espresso martinis, and small flower vases." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl7sLJKAhqMkDtV0QJe7_OcC0H_goROZJ-cHOWzYVhQUh5msPVSJ4MgalF6ow05a5hdzz_3FoeV4ejlQT3VoBpFn37xaZfOu6W5K0ahAOPMts4oO0WGL_vFRTheJhQMrf6YHmQRRdP02Rx_NFgA5ArWaOj1kmRWkTQZqCs7IIUj6L5WKvzIqqeIqD6kKzzr0uvSDXdQt4dQnGQHlvRsMJbdhL_-NRWieUgrc8vxA"/>
+<div class="absolute inset-0 bg-surface-container-lowest/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<span class="font-label-caps text-[10px] text-tertiary uppercase tracking-widest">Twilight Salon</span>
+<p class="font-headline-sm text-sm text-on-surface mt-1">Candlelight &amp; Botanical Digestifs</p>
+<span class="font-body-sm text-[11px] text-on-surface-variant mt-1">#EveningSalon #ParisianNights</span>
+</div>
+</div>
+<!-- Image 4 -->
+<div class="relative group overflow-hidden rounded-xl bg-surface-container aspect-square shadow-lg">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A vintage brass tray displaying three freshly baked golden pain au chocolat croissants, dusted with edible gold powder beside a small glass vase of blush spray roses." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSfgB-K388n10jLqN6Ueg0X-Kx33rHN_w76kJHymp5qtoIAvm7buxKJ59n6ackBTYTxSxQBr4nWP_ZpDgzAu3wyUEYGU-0N8UlcH_Z6tk4jkEVbSN4qmJY4Fuq2ydx_BOvYd0exY26nwBR2XvJcOSGbpRrivllm2XDYF1uRp5vsMSNMYEZsN3CBgOOhIvpO9QM8z-FKxORY4IX0ZDSV5R0nLWSXC52twh9RcI1Zw"/>
+<div class="absolute inset-0 bg-surface-container-lowest/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<span class="font-label-caps text-[10px] text-tertiary uppercase tracking-widest">07:00 Fresh Bake</span>
+<p class="font-headline-sm text-sm text-on-surface mt-1">Golden Valrhona Feuilletés</p>
+<span class="font-body-sm text-[11px] text-on-surface-variant mt-1">#ArtisanCroissant #Viennoiserie</span>
+</div>
+</div>
+<!-- Image 5 -->
+<div class="relative group overflow-hidden rounded-xl bg-surface-container aspect-square shadow-lg">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Elegant guests enjoying high tea in an airy indoor botanical courtyard garden filled with lush climbing vines, vintage velvet armchairs, and tiered pastry stands." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrDXRfN8N4eMLBMz5nr3ul2ADeM_zwMFQB4scimnbRdhiqYyTIFMpAFjMx6zfmEp5YyC5Xjlxv5VgD2av8ACydBkaMLEOXSAf6Q3gnCqZPtel5yJlojgVR3CUWNZn5iIPo2BKEVTbSxbz3mP9MvRIldq-VVZkHd1tjev-WALbQqQ8vFvRe_1xh0VevVKbwb7jQ-0e36SJtz6ZwvCzzYQdR0Kib0AVRYUWoGe-FIg"/>
+<div class="absolute inset-0 bg-surface-container-lowest/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<span class="font-label-caps text-[10px] text-tertiary uppercase tracking-widest">Garden Conservatory</span>
+<p class="font-headline-sm text-sm text-on-surface mt-1">Afternoon Tea Tasting Salon</p>
+<span class="font-body-sm text-[11px] text-on-surface-variant mt-1">#HighTea #BotanicalGarden</span>
+</div>
+</div>
+<!-- Image 6 -->
+<div class="relative group overflow-hidden rounded-xl bg-surface-container aspect-square shadow-lg">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Close-up of a customer smiling warmly while holding a gigantic hand-wrapped bouquet of 50 crimson roses with gold foil Bloom and Brew branding tags." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVgDuj-URajY-Z4y4EMjVDtj5SV1vahj9ZuUz1NYBcXNvo6DFOtoHBV6qZCQa0vZIj5HvmPJN6IWsyAFnYyer7Bg_n1fmJJo1sfDTbiFbdOmWdkoaH9bHhL9z_eJJLjAq3hrPd0wImNCOp_rAiRaJfpI0-ArcfafWNasbkw2bPdBTMIaIb5bIYry4ruNPcvG2sjgWRW4BoFupIzaNJ7_uxqqluoPJE3JgqZpuZPQ"/>
+<div class="absolute inset-0 bg-surface-container-lowest/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<span class="font-label-caps text-[10px] text-tertiary uppercase tracking-widest">Patron Stories</span>
+<p class="font-headline-sm text-sm text-on-surface mt-1">Anniversary Surprises at Table 4</p>
+<span class="font-body-sm text-[11px] text-on-surface-variant mt-1">#BespokeMoments #BloomAndBrewPatrons</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 7: CUSTOMER TESTIMONIALS -->
+<section class="py-space-2xl bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto px-margin md:px-margin-desktop">
+<div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+<span class="font-label-caps text-label-caps text-tertiary uppercase tracking-widest">Words from Connoisseurs</span>
+<h2 class="font-display-hero text-headline-lg md:text-display-hero text-on-surface">Praise from the Salon</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Read authentic critiques and personal recollections from patrons who share our reverence for exquisite craft.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Review 1 -->
+<div class="bg-surface-container p-8 rounded-xl shadow-xl flex flex-col justify-between relative group">
+<div class="space-y-4">
+<div class="flex items-center text-tertiary gap-1">
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+</div>
+<p class="font-headline-sm text-base text-on-surface italic leading-relaxed">
+              "An extraordinary sensory sanctuary. Ordering the Velvet Rose Cappuccino while watching the floral team compose centerpieces transported me straight to the Left Bank. The coffee was genuinely flawless."
+            </p>
+</div>
+<div class="pt-6 border-t border-tertiary/10 mt-6 flex items-center justify-between">
+<div>
+<h4 class="font-title-editorial text-sm text-on-surface">Ananya Singhania</h4>
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase">Lifestyle Columnist • Mumbai</span>
+</div>
+<span class="px-2 py-0.5 bg-surface-container-highest text-tertiary font-label-caps text-[9px] uppercase tracking-wider rounded">Verified Patron</span>
+</div>
+</div>
+<!-- Review 2 -->
+<div class="bg-surface-container p-8 rounded-xl shadow-xl flex flex-col justify-between relative group">
+<div class="space-y-4">
+<div class="flex items-center text-tertiary gap-1">
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+</div>
+<p class="font-headline-sm text-base text-on-surface italic leading-relaxed">
+              "For our tenth wedding anniversary, the custom hamper and table booking exceeded every dream. The 50 Crimson Garden Roses lasted over twelve days looking regal. Unmatched floristry."
+            </p>
+</div>
+<div class="pt-6 border-t border-tertiary/10 mt-6 flex items-center justify-between">
+<div>
+<h4 class="font-title-editorial text-sm text-on-surface">Rohit &amp; Meera Varma</h4>
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase">Salon Members Since 2023</span>
+</div>
+<span class="px-2 py-0.5 bg-surface-container-highest text-tertiary font-label-caps text-[9px] uppercase tracking-wider rounded">Private Dining</span>
+</div>
+</div>
+<!-- Review 3 -->
+<div class="bg-surface-container p-8 rounded-xl shadow-xl flex flex-col justify-between relative group">
+<div class="space-y-4">
+<div class="flex items-center text-tertiary gap-1">
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+</div>
+<p class="font-headline-sm text-base text-on-surface italic leading-relaxed">
+              "The single-origin Ethiopian pour-over has few peers across the continent. When combined with their freshly laminated Valrhona chocolate croissants, Bloom &amp; Brew is simply peerless."
+            </p>
+</div>
+<div class="pt-6 border-t border-tertiary/10 mt-6 flex items-center justify-between">
+<div>
+<h4 class="font-title-editorial text-sm text-on-surface">Chef Julian Mercier</h4>
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase">Gastronomy Critic</span>
+</div>
+<span class="px-2 py-0.5 bg-surface-container-highest text-tertiary font-label-caps text-[9px] uppercase tracking-wider rounded">Culinary Review</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- LUXURY RESERVATION PROMPT BANNER -->
+<section class="py-space-xl bg-surface border-t border-tertiary/10">
+<div class="max-w-7xl mx-auto px-margin md:px-margin-desktop text-center">
+<div class="max-w-3xl mx-auto space-y-4">
+<span class="font-label-caps text-label-caps text-tertiary uppercase tracking-widest">Private Salon Reservations</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Experience Afternoon Tea in Bloom</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Reservations are highly recommended for weekend high tea tastings and private conservatory garden tables.</p>
+<div class="pt-4 flex flex-wrap items-center justify-center gap-4">
+<button class="px-8 py-4 bg-tertiary text-surface-container-lowest font-label-caps text-label-caps uppercase tracking-widest shadow-xl hover:bg-tertiary-fixed transition-all flex items-center gap-2" onclick="document.getElementById('reservation-modal').classList.remove('hidden')" type="button">
+<span class="material-symbols-outlined text-base">table_restaurant</span>
+<span>Reserve Garden Table</span>
+</button>
+<a class="px-8 py-4 bg-surface-container-high text-tertiary font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary-container transition-all flex items-center gap-2" href="#featured-products">
+<span class="material-symbols-outlined text-base">shopping_basket</span>
+<span>Browse Online Boutique</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- TOAST NOTIFICATION CONTAINER -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-32 opacity-0 transition-all duration-300 pointer-events-none" id="toast-notification">
+<div class="bg-surface-container-high border border-tertiary/40 px-5 py-3 rounded-lg shadow-2xl flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary text-xl">check_circle</span>
+<div>
+<p class="font-label-caps text-xs text-on-surface uppercase tracking-wider font-semibold" id="toast-title">Added to Salon Selection</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant" id="toast-desc">Item successfully placed into your cart.</p>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Filter products by category tab
+  function filterProducts(category, btnElement) {
+    const cards = document.querySelectorAll('.product-card');
+    cards.forEach(card => {
+      if (category === 'all' || card.classList.contains(category)) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+
+    // Update button states
+    const buttons = document.querySelectorAll('.product-filter-btn');
+    buttons.forEach(btn => {
+      btn.className = 'product-filter-btn px-4 py-2 rounded font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all';
+    });
+    btnElement.className = 'product-filter-btn px-4 py-2 rounded font-label-caps text-label-caps uppercase tracking-wider bg-tertiary text-surface-container-lowest transition-all';
+  }
+
+  // Toast micro-interaction
+  function showToast(message, subtext) {
+    const toast = document.getElementById('toast-notification');
+    const toastTitle = document.getElementById('toast-title');
+    const toastDesc = document.getElementById('toast-desc');
+    
+    if (toastTitle) toastTitle.textContent = message || "Atelier Action Confirmed";
+    if (toastDesc) toastDesc.textContent = subtext || "Thank you for curating with Bloom & Brew.";
+    
+    toast.classList.remove('translate-y-32', 'opacity-0');
+    toast.classList.add('translate-y-0', 'opacity-100');
+
+    setTimeout(() => {
+      toast.classList.remove('translate-y-0', 'opacity-100');
+      toast.classList.add('translate-y-32', 'opacity-0');
+    }, 3200);
+  }
+
+  // Add product to cart helper
+  function addToCartItem(productName, price) {
+    showToast(productName + " added", price + " — Ready in your Salon Cart");
+  }
+</script></main><div class="fixed inset-y-0 right-0 z-50 w-full max-w-md bg-surface-container-high border-l border-tertiary/30 shadow-2xl translate-x-full transition-transform duration-300 ease-in-out flex flex-col" id="cart-drawer"><div class="h-20 px-6 border-b border-tertiary/20 flex items-center justify-between"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary">local_florist</span><h2 class="font-headline-sm text-headline-sm text-on-surface">Salon Cart (2)</h2></div><button class="text-on-surface-variant hover:text-tertiary p-2" onclick="document.getElementById('cart-drawer').classList.add('translate-x-full')" type="button"><span class="material-symbols-outlined">close</span></button></div><div class="flex-1 overflow-y-auto p-6 space-y-4"><div class="flex gap-4 p-3 bg-surface-container border border-tertiary/10 rounded"><div class="w-16 h-20 bg-surface-container-highest flex-shrink-0 flex items-center justify-center"><span class="material-symbols-outlined text-tertiary">yard</span></div><div class="flex-1 flex flex-col justify-between"><div><h3 class="font-headline-sm text-sm text-on-surface">The Montmartre Peony Blend</h3><p class="font-label-caps text-[10px] text-tertiary uppercase">Hand-tied Bouquet</p></div><div class="flex items-center justify-between"><span class="font-body-sm text-body-sm text-on-surface-variant">Qty: 1</span><span class="font-label-md text-label-md text-tertiary font-semibold">₹1,850</span></div></div></div><div class="flex gap-4 p-3 bg-surface-container border border-tertiary/10 rounded"><div class="w-16 h-20 bg-surface-container-highest flex-shrink-0 flex items-center justify-center"><span class="material-symbols-outlined text-tertiary">coffee</span></div><div class="flex-1 flex flex-col justify-between"><div><h3 class="font-headline-sm text-sm text-on-surface">Ethiopian Yirgacheffe Roast</h3><p class="font-label-caps text-[10px] text-tertiary uppercase">250g Whole Bean</p></div><div class="flex items-center justify-between"><span class="font-body-sm text-body-sm text-on-surface-variant">Qty: 1</span><span class="font-label-md text-label-md text-tertiary font-semibold">₹850</span></div></div></div></div><div class="p-6 border-t border-tertiary/20 bg-surface-container-low"><div class="flex justify-between items-center mb-4"><span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Subtotal</span><span class="font-headline-sm text-headline-sm text-tertiary">₹2,700</span></div><p class="font-body-sm text-[12px] text-secondary mb-4">Complimentary Parisian Gift Box unlocked</p><a class="w-full block py-3 text-center bg-primary-container border border-tertiary text-tertiary font-label-caps text-label-caps uppercase tracking-widest hover:bg-secondary-container hover:text-secondary-fixed transition-colors" data-path="shop" href="#">Proceed to Checkout</a></div></div><div class="fixed inset-0 z-50 bg-surface-container-lowest/80 backdrop-blur-sm hidden flex items-center justify-center p-4" id="reservation-modal"><div class="bg-surface-container-high border border-tertiary/40 max-w-lg w-full p-8 shadow-[0_24px_48px_-12px_rgba(100,30,50,0.45)] relative"><button class="absolute top-6 right-6 text-on-surface-variant hover:text-tertiary" onclick="document.getElementById('reservation-modal').classList.add('hidden')" type="button"><span class="material-symbols-outlined">close</span></button><div class="text-center mb-6"><span class="font-label-caps text-label-caps text-tertiary uppercase tracking-widest">Salon Reservations</span><h2 class="font-headline-md text-headline-md text-on-surface mt-1">Book a Garden Table</h2><p class="font-body-sm text-body-sm text-on-surface-variant mt-2">High tea tastings &amp; botanical breakfast seatings</p></div><form class="space-y-4"><div class="grid grid-cols-2 gap-4"><div><label class="block font-label-caps text-[11px] text-tertiary uppercase mb-1">Date</label><input class="w-full bg-surface-container border border-tertiary/30 px-3 py-2 text-on-surface font-body-sm text-sm focus:border-tertiary focus:outline-none" type="date"/></div><div><label class="block font-label-caps text-[11px] text-tertiary uppercase mb-1">Guests</label><select class="w-full bg-surface-container border border-tertiary/30 px-3 py-2 text-on-surface font-body-sm text-sm focus:border-tertiary focus:outline-none"><option>2 Salon Patrons</option><option>4 Garden Table</option><option>6 Veranda Salon</option></select></div></div><div><label class="block font-label-caps text-[11px] text-tertiary uppercase mb-1">Seating Experience</label><select class="w-full bg-surface-container border border-tertiary/30 px-3 py-2 text-on-surface font-body-sm text-sm focus:border-tertiary focus:outline-none"><option>Parisian High Tea &amp; Floral Workshop</option><option>Artisanal Pour-Over &amp; Pastry Pairing</option><option>Botanical Garden High Tea</option></select></div><button class="w-full py-3 bg-primary-container border border-tertiary text-tertiary font-label-caps text-label-caps uppercase tracking-widest hover:bg-secondary-container hover:text-secondary-fixed transition-colors mt-4" onclick="document.getElementById('reservation-modal').classList.add('hidden')" type="button">Confirm Atelier Booking</button></form></div></div><footer class="w-full bg-surface-container-lowest border-t border-tertiary/20 pt-space-2xl pb-space-lg"><div class="max-w-7xl mx-auto px-margin md:px-margin-desktop"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter-desktop mb-space-xl"><div class="space-y-4"><span class="font-headline-sm text-headline-sm text-on-surface font-headline-sm block">BLOOM &amp; BREW</span><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">An artisanal confluence of heritage floristry and Parisian coffee culture nestled in tranquil botanical settings.</p><div class="flex items-center gap-space-sm text-tertiary pt-2"><span class="material-symbols-outlined text-[20px]">verified</span><span class="font-label-caps text-label-caps tracking-widest uppercase">Certified Botanical Atelier</span></div></div><div class="space-y-3"><h4 class="font-label-caps text-label-caps text-tertiary uppercase tracking-widest">Atelier Salons</h4><ul class="space-y-2 font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-tertiary transition-colors" data-path="cafe-menu" href="#">Artisanal Espresso &amp; Brews</a></li><li><a class="hover:text-tertiary transition-colors" data-path="flower-boutique" href="#">Haute Floral Creations</a></li><li><a class="hover:text-tertiary transition-colors" data-path="cafe-menu" href="#">High Tea Salon Bookings</a></li><li><a class="hover:text-tertiary transition-colors" data-path="shop" href="#">Bespoke Gift Boxes</a></li><li><a class="hover:text-tertiary transition-colors" data-path="our-story" href="#">Private Botanical Events</a></li></ul></div><div class="space-y-3"><h4 class="font-label-caps text-label-caps text-tertiary uppercase tracking-widest">Boutique &amp; Hours</h4><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">42 Rue de l'Atelier, Kensington Arcade<br/>Mumbai, Maharashtra 400050</p><p class="font-body-sm text-body-sm text-tertiary pt-2">Tuesday – Sunday: 8:00 AM – 10:00 PM<br/><span class="text-on-surface-variant">Mondays: Reserved for Floral Harvest</span></p></div><div class="space-y-4"><h4 class="font-label-caps text-label-caps text-tertiary uppercase tracking-widest">The Botanical Gazette</h4><p class="font-body-sm text-body-sm text-on-surface-variant">Receive notes on single-origin roasts and rare seasonal flower arrivals.</p><form class="flex flex-col gap-2"><div class="flex"><input class="w-full bg-surface-container border border-tertiary/30 px-3 py-2 text-on-surface font-body-sm text-body-sm placeholder-on-surface-variant/50 focus:outline-none focus:border-tertiary" placeholder="Your email address" type="email"/><button class="bg-primary-container px-4 text-tertiary border-y border-r border-tertiary font-label-caps text-label-caps uppercase hover:bg-secondary-container hover:text-secondary-fixed transition-colors" type="button">Join</button></div></form></div></div><div class="border-t border-tertiary/10 pt-space-lg flex flex-col md:flex-row items-center justify-between gap-4 text-on-surface-variant font-body-sm text-body-sm"><p>© 2025 Bloom &amp; Brew Botanical Café &amp; Atelier. All rights reserved.</p><div class="flex items-center gap-6"><a class="hover:text-tertiary transition-colors font-label-caps text-[11px] uppercase tracking-wider" data-path="contact" href="#">Privacy Policy</a><a class="hover:text-tertiary transition-colors font-label-caps text-[11px] uppercase tracking-wider" data-path="contact" href="#">Terms of Atelier</a><a class="hover:text-tertiary transition-colors font-label-caps text-[11px] uppercase tracking-wider" data-path="contact" href="#">Concierge</a></div></div></div></footer></body></html>
